@@ -21,8 +21,8 @@ public class HomeController {
 	////// INDEX Page/////////
 	@RequestMapping(path = { "/", "home.do" })
 	public String goHome(Model model) {
-//		List<Beer> beers = dao.retrieveAllBeer();
-//		model.addObject("beers", beers);
+		List<Beer> beers = dao.retrieveAllBeer();
+		model.addObject("beers", beers);
 		return "index";
 	}
 
