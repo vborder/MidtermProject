@@ -1,5 +1,6 @@
 package com.skilldistillery.brushr.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -30,7 +31,7 @@ public class UserController {
 	}
 	@RequestMapping(path="createAccount.do", method= RequestMethod.POST)
 	public String createUser(HttpSession session, Model model) {
-		if(userDAO.getUserByUsername()== null) {
+		if(userDAO.getUserByUsername() == null) {
 			
 			User p = userDAO.addUser();
 			
@@ -118,8 +119,16 @@ public class UserController {
 	//viewBeerRecipeComment
 	@RequestMapping(path="viewBeerRecipeComment.do", method= RequestMethod.GET)
 	public String userComments(HttpSession session, Model model) {
-		User u = (User)
+		User admin = (User) session.getAttribute("admin");
+		User u = (User) session.getAttribute("user");
 		
+		List<Comment> comments = new ArrayList<>();
+		if(admin != null) {
+			comments = userDAO.getBeerRecipeCommentByUser(admin.getId());
+		} else if(u != null) {
+			comments = userDAO.getBeerRecipeCommentByUser(u.getId());
+		}
+		model.addObject("beerRecipComments", comments);
 		
 		return "beerinfo";
 	}
@@ -131,19 +140,29 @@ public class UserController {
 			@RequestParam(name="beerRecipeComment") String beerRecipeComment,
 			HttpSession session, 
 			Model model) {
-		
-		User u = (User) session.getAttribute("user");
 		User admin = (User) session.getAttribute("admin");
-		if(!admin == null) {
+		User u = (User) session.getAttribute("user");
+		
+		if(admin != null) {
 			userDAO.createBeerRecipeComments(admin.getId(), beerRecipeId, beerRecipeComment);
-		} else if(!u == null) {
+		} else if(u != null) {
 			userDAO.createBeerRecipeComments(u.getId(), beerRecipeId, beerRecipeComment);
 		}
+	
 		model.addObject("beer", beerDAO.getBeerById(beerRecipeId);
 		model.addObject("listOfBeerComments", beerDAO.getListOfBeerComments(beerRecipeId));
 		
 		return "beerinfo";
 	}
+	//listAllBeerRecipeComment
+	@RequestMapping(path="listAllBeerRecipeComment.do", method= RequestMethod.GET)
+	public String allBeerRecipeComments(HttpSession session, Model model) {
+		List<Comment> listOfComments = userDAO.getListAllBeerRecipeComment();
+		model.addObject("allBeerRecipeComments", listOfComments);
+		
+		return "beerinfo";
+	}
+	
 	
 	
 }
