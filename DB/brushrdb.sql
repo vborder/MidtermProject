@@ -24,12 +24,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `first_name` VARCHAR(45) NULL,
   `last_name` VARCHAR(100) NULL,
-  `password` VARCHAR(200) NULL,
+  `password` VARCHAR(200) NOT NULL,
   `enabled` TINYINT(1) NULL DEFAULT '1',
   `role` VARCHAR(45) NULL,
   `created_at` DATETIME NULL,
   `updated_at` DATETIME NULL,
-  PRIMARY KEY (`id`))
+  `login_name` VARCHAR(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `login_name_UNIQUE` (`login_name` ASC))
 ENGINE = InnoDB;
 
 
@@ -43,8 +45,8 @@ CREATE TABLE IF NOT EXISTS `beer_recipe` (
   `beer_name` VARCHAR(200) NULL,
   `beer_type` VARCHAR(200) NULL,
   `yeast` VARCHAR(100) NULL,
-  `description` TEXT(5000) NULL,
-  `enabled` TINYINT(1) NULL,
+  `description` TEXT NULL,
+  `enabled` TINYINT NULL,
   `created_at` DATETIME NULL,
   `updated_at` DATETIME NULL,
   `img_url` TEXT(1000) NULL,
@@ -70,11 +72,20 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `created_at` DATETIME NULL,
   `enabled` TINYINT(1) NULL,
   `beer_id` INT NOT NULL,
+  `user_id` INT NOT NULL,
+  `content` TEXT NULL,
+  `rating` INT NULL,
   PRIMARY KEY (`id`),
   INDEX `fk_comment_beer_idx` (`beer_id` ASC),
+  INDEX `fk_comment_user1_idx` (`user_id` ASC),
   CONSTRAINT `fk_comment_beer`
     FOREIGN KEY (`beer_id`)
     REFERENCES `beer_recipe` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_comment_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -87,9 +98,10 @@ DROP TABLE IF EXISTS `hops` ;
 
 CREATE TABLE IF NOT EXISTS `hops` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `hops_name` VARCHAR(500) NULL,
-  `hops_amount` VARCHAR(500) NULL,
+  `name` VARCHAR(500) NULL,
   `enabled` TINYINT(1) NULL,
+  `description` TEXT NULL,
+  `img_url` TEXT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -101,21 +113,23 @@ DROP TABLE IF EXISTS `grain` ;
 
 CREATE TABLE IF NOT EXISTS `grain` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `grain_name` VARCHAR(500) NULL,
-  `grain_amount` VARCHAR(500) NULL,
+  `name` VARCHAR(500) NULL,
   `enabled` TINYINT(1) NULL,
+  `description` TEXT NULL,
+  `img_url` TEXT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `hops_has_beer`
+-- Table `recipe_hops`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `hops_has_beer` ;
+DROP TABLE IF EXISTS `recipe_hops` ;
 
-CREATE TABLE IF NOT EXISTS `hops_has_beer` (
+CREATE TABLE IF NOT EXISTS `recipe_hops` (
   `hops_id` INT NOT NULL,
   `beer_id` INT NOT NULL,
+  `hops_amount` VARCHAR(500) NULL,
   PRIMARY KEY (`hops_id`, `beer_id`),
   INDEX `fk_hops_has_beer_beer1_idx` (`beer_id` ASC),
   INDEX `fk_hops_has_beer_hops1_idx` (`hops_id` ASC),
@@ -133,13 +147,14 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `grain_has_beer`
+-- Table `recipe_grain`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `grain_has_beer` ;
+DROP TABLE IF EXISTS `recipe_grain` ;
 
-CREATE TABLE IF NOT EXISTS `grain_has_beer` (
+CREATE TABLE IF NOT EXISTS `recipe_grain` (
   `grain_id` INT NOT NULL,
   `beer_id` INT NOT NULL,
+  `grain_amount` VARCHAR(500) NULL,
   PRIMARY KEY (`grain_id`, `beer_id`),
   INDEX `fk_grain_has_beer_beer1_idx` (`beer_id` ASC),
   INDEX `fk_grain_has_beer_grain1_idx` (`grain_id` ASC),
@@ -157,24 +172,24 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `user_has_comment`
+-- Table `favorites`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `user_has_comment` ;
+DROP TABLE IF EXISTS `favorites` ;
 
-CREATE TABLE IF NOT EXISTS `user_has_comment` (
+CREATE TABLE IF NOT EXISTS `favorites` (
+  `beer_recipe_id` INT NOT NULL,
   `user_id` INT NOT NULL,
-  `comment_id` INT NOT NULL,
-  PRIMARY KEY (`user_id`, `comment_id`),
-  INDEX `fk_user_has_comment_comment1_idx` (`comment_id` ASC),
-  INDEX `fk_user_has_comment_user1_idx` (`user_id` ASC),
-  CONSTRAINT `fk_user_has_comment_user1`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `user` (`id`)
+  PRIMARY KEY (`beer_recipe_id`, `user_id`),
+  INDEX `fk_beer_recipe_has_user_user1_idx` (`user_id` ASC),
+  INDEX `fk_beer_recipe_has_user_beer_recipe1_idx` (`beer_recipe_id` ASC),
+  CONSTRAINT `fk_beer_recipe_has_user_beer_recipe1`
+    FOREIGN KEY (`beer_recipe_id`)
+    REFERENCES `beer_recipe` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_user_has_comment_comment1`
-    FOREIGN KEY (`comment_id`)
-    REFERENCES `comment` (`id`)
+  CONSTRAINT `fk_beer_recipe_has_user_user1`
+    FOREIGN KEY (`user_id`)
+    REFERENCES `user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -189,3 +204,83 @@ GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'brushr'@'localhost'
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `user`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `brushrdb`;
+INSERT INTO `user` (`id`, `first_name`, `last_name`, `password`, `enabled`, `role`, `created_at`, `updated_at`, `login_name`) VALUES (1, 'userguy', 'userlast', 'password', 1, 'user', NULL, NULL, 'user');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `beer_recipe`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `brushrdb`;
+INSERT INTO `beer_recipe` (`id`, `beer_name`, `beer_type`, `yeast`, `description`, `enabled`, `created_at`, `updated_at`, `img_url`, `user_id`) VALUES (1, 'good beer', 'IPA', 'yeasty yeast', 'very yeasty', 1, NULL, NULL, NULL, 1);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `comment`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `brushrdb`;
+INSERT INTO `comment` (`id`, `updated_at`, `created_at`, `enabled`, `beer_id`, `user_id`, `content`, `rating`) VALUES (1, NULL, NULL, 1, 1, 1, 'fake content', 5);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `hops`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `brushrdb`;
+INSERT INTO `hops` (`id`, `name`, `enabled`, `description`, `img_url`) VALUES (1, 'hops hops', 1, 'very hoppy', NULL);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `grain`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `brushrdb`;
+INSERT INTO `grain` (`id`, `name`, `enabled`, `description`, `img_url`) VALUES (1, 'grainy grain', 1, 'very grainy', NULL);
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `recipe_hops`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `brushrdb`;
+INSERT INTO `recipe_hops` (`hops_id`, `beer_id`, `hops_amount`) VALUES (1, 1, 'alot');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `recipe_grain`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `brushrdb`;
+INSERT INTO `recipe_grain` (`grain_id`, `beer_id`, `grain_amount`) VALUES (1, 1, 'alot');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
+-- Data for table `favorites`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `brushrdb`;
+INSERT INTO `favorites` (`beer_recipe_id`, `user_id`) VALUES (1, 1);
+
+COMMIT;
+
