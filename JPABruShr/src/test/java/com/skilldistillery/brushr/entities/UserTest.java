@@ -45,9 +45,15 @@ private User user;
 	@Test
 	void test() {
 		assertNotNull(user);
-		assertEquals("admin", user.getPassword());
-		assertEquals("admin", user.getPassword());
-		assertTrue( user.getEnabled());
+		assertEquals(1, user.getId());
+		assertEquals("userguy", user.getFirstName());
+		assertEquals("userlast", user.getLastName());
+		assertEquals("password", user.getPassword());
+		assertTrue(user.getEnabled());
+		assertEquals("user", user.getRole());
+//		assertEquals("admin", user.getCreatedAt());
+//		assertEquals("admin", user.getUpdatedAt());
+		assertEquals("user", user.getLoginName());
 	}
 
 }
