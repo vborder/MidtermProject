@@ -30,9 +30,9 @@ public class UserController {
 	}
 	@RequestMapping(path="createAccount.do", method= RequestMethod.POST)
 	public String createUser(HttpSession session, Model model) {
-		if(userDAO.getUserByUsername()== nunll) {
+		if(userDAO.getUserByUsername()== null) {
 			
-			Profile p = userDAO.addUser();
+			User p = userDAO.addUser();
 			
 			session.setAttribute("user", p.getUser());//Profile Object needs a User to get Object from
 			session.setAttribute("profile", p);
@@ -56,7 +56,8 @@ public class UserController {
 	public String loginUser(@RequestParam(name="username") String username, @RequestParam(name="password") String password, HttpSession session, Model model) {
 		User u = userDAO.getByUserName(username);
 		if(u != null && u.getPassword().equals(password)) {
-			List<Profile> profile = userDAO.getProfileByUsername(u.getUsername());
+			
+			List<User> profile = userDAO.getProfileByUsername(u.getUsername());
 			if(u.isAdmin()) {//if user is Admin status
 				session.setAttribute("admin", u);
 			}else {
