@@ -2,7 +2,6 @@ package com.skilldistillery.brushr.entities;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -15,10 +14,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-public class BeerRecipeTest {
+public class RecipeHopsTest {
 	private static EntityManagerFactory emf;
 	private EntityManager em;
-	private BeerRecipe beerRecipe;
+	private RecipeHops rHops;
 		
 		
 		@BeforeAll
@@ -34,27 +33,24 @@ public class BeerRecipeTest {
 		@BeforeEach
 		void setUp() throws Exception {
 			em = emf.createEntityManager();
-			beerRecipe = em.find(BeerRecipe.class, 1);
+			RecipeHopsId rid = new RecipeHopsId();
+			rid.setHopsId(1);
+			rid.setBeerRecipeId(1);
+			rHops = em.find(RecipeHops.class, rid);
+			
 		}
 
 		@AfterEach
 		void tearDown() throws Exception {
 			em.close();
-			beerRecipe = null;
+			rHops=null;
 		}
-
+		
 		@Test
-		void test() {
-			assertNotNull(beerRecipe);
-			assertEquals(1, beerRecipe.getId());
-			assertEquals("good beer", beerRecipe.getBeerName());
-			assertEquals("IPA", beerRecipe.getBeerType());
-			assertEquals("yeasty yeast", beerRecipe.getYeast());
-			assertEquals("very yeasty", beerRecipe.getDescription());
-			assertTrue(beerRecipe.isEnabled());
-//			assertEquals("admin", beerRecipe.getCreatedAt());
-//			assertEquals("admin", beerRecipe.getUpdatedAt());
-//			assertEquals("admin", beerRecipe.getImgUrl());
+		void test1() {
+			assertNotNull(rHops);
+			assertEquals("alot", rHops.getHopsAmount());
+			
 		}
 		
 		@Test
@@ -68,8 +64,8 @@ public class BeerRecipeTest {
 			+----+-----------+
 			|  1 | good beer |
 			+----+-----------+*/
-			assertNotNull(beerRecipe);
-			assertEquals(1, beerRecipe.getRecipeHops().size());
+			assertNotNull(rHops);
+//			assertEquals(1, rHops.getBeer().size());
 			
 		}
 
