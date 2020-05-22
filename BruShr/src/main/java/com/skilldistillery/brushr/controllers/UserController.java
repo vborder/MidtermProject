@@ -35,7 +35,6 @@ public class UserController {
 			User p = userDAO.addUser();
 			
 			session.setAttribute("user", p.getUser());//Profile Object needs a User to get Object from
-			session.setAttribute("profile", p);
 			
 			return "profile";
 		} else {
@@ -63,7 +62,7 @@ public class UserController {
 			}else {
 				session.setAttribute("user", u);
 			}
-			session.setAttribute("profile", profile.get(0));
+			
 			return "profile";
 			
 		} else {
@@ -88,14 +87,14 @@ public class UserController {
 			@RequestParam(name="username") String username,
 			HttpSession session, Model model) {
 			User u = (User) session.getAttribute("user");
-			Profile p = (Profile) session.getAttribute("profile");//if we dont have a Profile entity, FIXME
+			
 			
 			String updateMessage = null;
 			
 			List<Object> updatedProfile = userDAO.updateProfile(u.getId(), p.getId(), firstName, lastName, email, username  );//Profile entity required FIX ME
 			if(!updateMessage.isEmpty()){
 				session.setAttribute("user", updatedProfile.get(0));
-				session.setAttribute("profile", updatedProfile.get(1) );
+				
 				
 				updateMessage = "Profile Successfully Updated";
 			} else {
@@ -116,8 +115,35 @@ public class UserController {
 		return "index";
 	}
 	
-	//Team how will the user see the comments?
+	//viewBeerRecipeComment
+	@RequestMapping(path="viewBeerRecipeComment.do", method= RequestMethod.GET)
+	public String userComments(HttpSession session, Model model) {
+		User u = (User)
+		
+		
+		return "beerinfo";
+	}
 	
+	
+	//addBeerRecipeComment
+	@RequestMapping(path ="addBeerRecipeComment.do", method= RequestMethod.POST)
+	public String addComment(@RequestParam(name="beerRecipeId") int beerRecipeId,
+			@RequestParam(name="beerRecipeComment") String beerRecipeComment,
+			HttpSession session, 
+			Model model) {
+		
+		User u = (User) session.getAttribute("user");
+		User admin = (User) session.getAttribute("admin");
+		if(!admin == null) {
+			userDAO.createBeerRecipeComments(admin.getId(), beerRecipeId, beerRecipeComment);
+		} else if(!u == null) {
+			userDAO.createBeerRecipeComments(u.getId(), beerRecipeId, beerRecipeComment);
+		}
+		model.addObject("beer", beerDAO.getBeerById(beerRecipeId);
+		model.addObject("listOfBeerComments", beerDAO.getListOfBeerComments(beerRecipeId));
+		
+		return "beerinfo";
+	}
 	
 	
 }
