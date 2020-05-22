@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>BrüShr</title>
+<title>Error</title>
 </head>
 <body>
-This is the splash page
+ERROR!
 </body>
 </html>

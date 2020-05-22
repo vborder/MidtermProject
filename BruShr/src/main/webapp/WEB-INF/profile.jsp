@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>BrüShr</title>
+<title>Profile</title>
 </head>
 <body>
-This is the splash page
+This is your profile page!
 </body>
 </html>

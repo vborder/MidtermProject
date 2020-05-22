@@ -5,9 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>BrüShr</title>
+<title>Create Beer</title>
 </head>
 <body>
-This is the splash page
+This is where you create a new beer
 </body>
 </html>
