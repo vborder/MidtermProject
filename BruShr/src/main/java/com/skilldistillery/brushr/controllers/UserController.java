@@ -3,6 +3,7 @@ package com.skilldistillery.brushr.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.EntityManager;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.skilldistillery.brushr.data.BeerDAO;
+import com.skilldistillery.brushr.data.UserDAO;
 import com.skilldistillery.brushr.entities.User;
 
 @Controller
@@ -21,19 +24,20 @@ public class UserController {
 	@Autowired
 	private UserDAO userDAO;
 	
-	@Autowired
-	private BeerDAO beerDAO;
+	
 	
 	
 	@RequestMapping(path="createAccount.do", method= RequestMethod.GET)
 	public String createUserAccount() {
-		return "profile";//does profile.jsp have an account form??
+		return "createuser";
 	}
+	
 	@RequestMapping(path="createAccount.do", method= RequestMethod.POST)
-	public String createUser(HttpSession session, Model model) {
-		if(userDAO.getUserByUsername() == null) {
+	public String createUser(User user, HttpSession session, Model model) {
+		
+		if(userDAO.findUserByUserName(user.getLoginName() == null) {
 			
-			User p = userDAO.addUser();
+			User p = userDAO.createUser(user);
 			
 			session.setAttribute("user", p.getUser());//Profile Object needs a User to get Object from
 			
@@ -101,7 +105,7 @@ public class UserController {
 			} else {
 				updateMessage = "Profile Not Updated";
 			}
-			model.addObject("message",updateMessage );
+			model.addAttribute("message",updateMessage );
 			
 		return "profile";
 	}
