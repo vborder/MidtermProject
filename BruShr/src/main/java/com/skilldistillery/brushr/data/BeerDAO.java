@@ -2,12 +2,14 @@ package com.skilldistillery.brushr.data;
 
 import java.util.List;
 
+import com.skilldistillery.brushr.entities.BeerRecipe;
+
 public interface BeerDAO {
 	public List<BeerRecipe> getAllBeers();
-	public BeerRecipe beer getBeerById(int id);
+	public BeerRecipe getBeerById(int id);
 	public List<BeerRecipe> getBeersByStyle(String style);
 	public List<BeerRecipe> getBeersByNameOrDescription(String style);
 	public boolean deleteBeer(int id);
-	public BeerRecipe updateBeer(int id, Beer beer);
+	public BeerRecipe updateBeer(int id, BeerRecipe beer);
 	public BeerRecipe createBeer(BeerRecipe beer);
 }
