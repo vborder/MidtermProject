@@ -97,7 +97,7 @@ public class RecipeGrain {
 
 	@Override
 	public String toString() {
-		return "RecipeGrain [id=" + id + ", grainAmount=" + grainAmount + ", beer=" + beer + ", grain=" + grain + "]";
+		return "RecipeGrain [id=" + id + ", grainAmount=" + grainAmount  + ", grain=" + grain + "]";
 	}
 	
 }

@@ -22,14 +22,21 @@ public class HomeController {
 		return beerDAO;
 	}
 
-	////// INDEX Page/////////
+	
 	@RequestMapping(path = { "/", "home.do" })
-	public String goHome(Model model) {
-		List<BeerRecipe> beers = beerDAO.getAllBeers();
-		model.addAttribute("beers", beers);
-		return "index";
+	public String goHome() {
+		
+		return "home";
 	}
 
+//////INDEX Page/////////
+	@RequestMapping(path = {  "index.do" })
+	public String goIndex(Model model) {
+		List<BeerRecipe> beer = beerDAO.getAllBeers();
+		model.addAttribute("beers", beer);
+		return "index";
+	}
+	
 	///////getBeerById//////////
 	@RequestMapping(path = "beer.do", params = "id", method = RequestMethod.GET)
 	public String beerById(@RequestParam(name = "id") int id, Model model) {

@@ -21,7 +21,7 @@ public class BeerDAOImpl implements BeerDAO{
 	
 	@Override
 	public List<BeerRecipe> getAllBeers(){
-		String jpql = " SELECT beer FROM beer_recipe beer";
+		String jpql = " SELECT beer FROM BeerRecipe beer";
 		
 		List<BeerRecipe> listOfBeers = em.createQuery(jpql, BeerRecipe.class).getResultList();
 	
