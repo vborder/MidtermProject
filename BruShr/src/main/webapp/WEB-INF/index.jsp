@@ -12,6 +12,7 @@
 	crossorigin="anonymous">
 </head>
 <body>
+
 	<c:forEach var="beer" items="${beers}">
 		<c:if test="${not empty beer}">
 			<div class="container">
@@ -20,9 +21,9 @@
 				<div class="card" style="width: 18rem;">
 				<h2>Beer Recipe</h2>
 					<img
-						src="https://unsplash.com/photos/K8nr6rNDtUE"
+						src="src="https://s3-us-west-2.amazonaws.com/homebrewassoc/wp-content/uploads/pressure-drop-smokey-brown-400x400.jpg"
 						class="card-img-top" alt="beer glass in hand"
-						style="height: 180px; width: 180px;">
+						style="height: 200px; width: 200px;">
 					<div class="card-body">
 						<a href="getBeerById.do?id=${beer.id}">
 							<h2 class="post-title">${beer.beerName}</h2>

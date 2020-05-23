@@ -25,12 +25,12 @@
 						</label>
 					</div>
 					<div class="form-group">
-						<label>Type: <input type="text" placeholder="Enter Type of Beer"
+						<label>Beer Recipe Type: <input type="text" placeholder="Enter Type of Beer"
 							name="beerType" maxlength="45" autocomplete="off"/>
 						</label>
 					</div>
 					<div class="form-group">
-						<label>Type: <input type="text" placeholder="Enter Description"
+						<label>Description: <input type="text" placeholder="Enter Description"
 							name="description" maxlength="45" autocomplete="off"/>
 						</label>
 					</div>
