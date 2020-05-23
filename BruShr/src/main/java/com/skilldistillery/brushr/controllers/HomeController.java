@@ -120,14 +120,20 @@ public class HomeController {
 		return "success";
 	}
 	
+	
 	/////// deleteBeer/////////////
 	@RequestMapping(path="deleteBeer.do", method = RequestMethod.POST)
 	public String deleteBeer(@RequestParam(name= "id") int id, Model model) {
 		boolean beerDelete = beerDAO.deleteBeer(id);
 		
-		model.addAttribute("deleted", beerDelete);
+//		model.addAttribute("deleted", beerDelete);
+		if (beerDelete) {
+			return "success";
+		} else {
+			
+			return "fail";
+		}
 		
-		return "index";
 	}
 	
 }

@@ -3,6 +3,7 @@ package com.skilldistillery.brushr.entities;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -46,10 +47,10 @@ public class BeerRecipe {
 	@JoinColumn(name="user_id")
 	private User user;
 	
-	@OneToMany(mappedBy = "beer")
+	@OneToMany(mappedBy = "beer", cascade=CascadeType.PERSIST)
 	private List<RecipeHops> recipeHops;
 	
-	@OneToMany(mappedBy = "beer")
+	@OneToMany(mappedBy = "beer", cascade=CascadeType.PERSIST)
 	private List<RecipeGrain> recipeGrains;
 	
 	public BeerRecipe(int id, String beerName, String beerType, String yeast, String description, Boolean enabled,

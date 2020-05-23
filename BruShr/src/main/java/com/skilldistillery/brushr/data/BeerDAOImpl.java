@@ -52,13 +52,19 @@ public class BeerDAOImpl implements BeerDAO{
 
 	@Override
 	public boolean deleteBeer(int id) {
-		boolean deletedBeer = false;
+		boolean isDeleted = false;
 		BeerRecipe b = em.find(BeerRecipe.class, id);
-		em.remove(b);
+		b.setEnabled(false);
 		em.flush();
-		em.close();
 		
-		return !(em.contains(b));
+		if(em.find(BeerRecipe.class, id).getEnabled() == false) {
+			isDeleted = true;
+		}
+		em.close();
+		return isDeleted;
+		
+		
+		
 	}
 
 	@Override
