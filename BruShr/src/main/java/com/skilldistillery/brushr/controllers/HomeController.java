@@ -87,8 +87,10 @@ public class HomeController {
 	//////// Search beerById////////////
 	@RequestMapping(path = "getBeerById.do", method = RequestMethod.GET)
 	public String getBeerById(@RequestParam(name = "id") int id, Model model) {
+		System.out.println("**********************" + id);
 		BeerRecipe beer = beerDAO.getBeerById(id);
-		return "beerInfo";//
+		model.addAttribute("beer", beer);
+		return "beerinfo";//
 	}
 	
 	/////// getBeersByNameOrDscription
@@ -103,6 +105,7 @@ public class HomeController {
 	/////// updateBeer
 	@RequestMapping(path="updateBeer.do",  method= RequestMethod.GET)
 	public String updateBeer(@RequestParam(name="id") int id, Model model) {
+		System.out.println("A bunch of asterix I AM HERE REALLY I AM YOU ARE ONLY HURTING YOURSELF" + id);
 		BeerRecipe beer = beerDAO.getBeerById(id);
 		model.addAttribute("beer", beer);
 		 
@@ -111,9 +114,10 @@ public class HomeController {
 	
 	@RequestMapping(path="updateBeer.do", method= RequestMethod.POST)
 	public String updateBeerItem(@RequestParam(name="id") int id, Model model) {
+									
 		BeerRecipe beer = beerDAO.getBeerById(id);
 		model.addAttribute("beer", beer);
-		return "home";
+		return "success";
 	}
 	
 	/////// deleteBeer/////////////
