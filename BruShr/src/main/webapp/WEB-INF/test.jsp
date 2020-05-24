@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<p>${user.loginName}</p>
-<p>${user.lastName}</p>
+{beer.beerName}
+{beer.beerStyle}
 </body>
 </html>
