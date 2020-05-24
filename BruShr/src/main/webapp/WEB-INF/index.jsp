@@ -13,6 +13,7 @@
 </head>
 <body>
 	<!-- Navigation -->
+	<p>${sessionScope.user}</p>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="container">
 			<a class="navbar-brand" href="index.do">BrüShr</a>
@@ -23,17 +24,23 @@
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
-
+				
+					<c:if test="${sessionScope.user == null }">
+						<li><a class="btn btn-primary" href="login.do">Sign In</a></li>
+						<li><a class="btn btn-success" href="createAccount.do">Create
+								Account</a></li>
+					</c:if>
 					<li class="nav-item active"><a class="nav-link" href="#">Home
 							<span class="sr-only">(current)</span>
 					</a></li>
 					<li class="nav-item active"><a class="nav-link"
 						href="BeersByNameOrDscription.do">Search Beer Recipe </a></li>
 
-					<li class="nav-item"><a class="nav-link" href="addBeer.do">Add
-							Beer Recipe</a></li>
+
 
 					<c:if test="${sessionScope.user != null }">
+						<li class="nav-item"><a class="nav-link" href="addBeer.do">Add
+								Beer Recipe</a></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">My
 								Account</a>
@@ -43,27 +50,27 @@
 
 							</div></li>
 					</c:if>
-					
+
 				</ul>
-				<div class="container">
-				
-					<ul>
+
+
+				<ul>
 					<c:if test="${sessionScope.user == null }">
-					<li><a href="login.do">Sign In</a></li>
+						<li><a class="btn btn-primary" href="login.do">Sign In</a></li>
+						<li><a class="btn btn-success" href="createAccount.do">Create
+								Account</a></li>
 					</c:if>
-					
+
 					<c:if test="${sessionScope.user != null }">
-					<li><a href="logout.do">Sign Out</a></li>
+						<li><a class="btn btn-success" href="logout.do">Sign Out</a></li>
 					</c:if>
-					<c:if test="${sessionScope.user == null }">
-					<li><a class="btn btn-success" href="createAccount.do">Create Account</a></li>
-					</c:if>
-					
-					</ul>
-				
-				</div>
+
+
+				</ul>
+
 			</div>
 		</div>
+
 	</nav>
 	<!-- Page Content -->
 	<div class="container">
@@ -83,40 +90,51 @@
 			<!-- /.col-lg-3 -->
 			<div class="col-lg-9">
 
-        <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
-          <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-             <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-          </ol>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img class="d-block img-fluid" src="https://images.unsplash.com/photo-1523567830207-96731740fa71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60" alt="First slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="https://images.unsplash.com/photo-1471421298428-1513ab720a8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="https://images.unsplash.com/photo-1575367439058-6096bb9cf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60" alt="Third slide">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block img-fluid" src="https://images.unsplash.com/photo-1558642891-54be180ea339?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60" alt="Fourth slide">
-            </div>
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
+				<div id="carouselExampleIndicators" class="carousel slide my-4"
+					data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0"
+							class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+					</ol>
+					<div class="carousel-inner" role="listbox">
+						<div class="carousel-item active">
+							<img class="d-block img-fluid"
+								src="https://images.unsplash.com/photo-1523567830207-96731740fa71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60"
+								alt="First slide">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block img-fluid"
+								src="https://images.unsplash.com/photo-1471421298428-1513ab720a8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60"
+								alt="Second slide">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block img-fluid"
+								src="https://images.unsplash.com/photo-1575367439058-6096bb9cf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60"
+								alt="Third slide">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block img-fluid"
+								src="https://images.unsplash.com/photo-1558642891-54be180ea339?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60"
+								alt="Fourth slide">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators"
+						role="button" data-slide="prev"> <span
+						class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+						class="sr-only">Previous</span>
+					</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
+						role="button" data-slide="next"> <span
+						class="carousel-control-next-icon" aria-hidden="true"></span> <span
+						class="sr-only">Next</span>
+					</a>
+				</div>
 
-			<c:forEach var="beer" items="${beers}">
-				<c:if test="${not empty beer}">
-					
+				<c:forEach var="beer" items="${beers}">
+					<c:if test="${not empty beer}">
+
 						<div class="row">
 
 							<div class="col-lg-4 col-md-6 mb-4">
@@ -141,15 +159,15 @@
 									</div>
 								</div>
 							</div>
-						
-					</div>
-				</c:if>
-			</c:forEach>
+
+						</div>
+					</c:if>
+				</c:forEach>
 
 
 
 
-			<%-- <c:forEach var="beer" items="${beers}">
+				<%-- <c:forEach var="beer" items="${beers}">
 		<c:if test="${not empty beer}">
 			<div class="row">
 				<div class="col-lg-8 col-md-10 mx-auto">
@@ -167,7 +185,7 @@
 	</c:forEach> --%>
 
 
-			
+
 				<!-- Footer -->
 				<footer class="py-5 bg-dark">
 					<div class="container">
@@ -176,17 +194,17 @@
 					</div>
 					<!-- /.container -->
 				</footer>
-				
-			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-				integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-				crossorigin="anonymous"></script>
-			<script
-				src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-				integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-				crossorigin="anonymous"></script>
-			<script
-				src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-				integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-				crossorigin="anonymous"></script>
+
+				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+					integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+					crossorigin="anonymous"></script>
+				<script
+					src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+					integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+					crossorigin="anonymous"></script>
+				<script
+					src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+					integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+					crossorigin="anonymous"></script>
 </body>
 </html>

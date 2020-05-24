@@ -2,6 +2,8 @@ package com.skilldistillery.brushr.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,12 +32,16 @@ public class HomeController {
 	}
 
 //////INDEX Page/////////
-	@RequestMapping(path = {  "index.do" })
-	public String goIndex(Model model) {
-		List<BeerRecipe> beer = beerDAO.getAllBeers();
-		model.addAttribute("beers", beer);
-		return "index";
-	}
+//	@RequestMapping(path = {  "index.do" })
+//	public String goIndex(Model model, HttpSession session) {
+//		List<BeerRecipe> beer = beerDAO.getAllBeers();
+//		model.addAttribute("beers", beer);
+//		session.getAttribute("user");
+//		System.out.println("user");
+//		return "index";
+//	}
+	
+	
 	
 	///////getBeerById//////////
 	@RequestMapping(path = "beer.do", params = "id", method = RequestMethod.GET)
