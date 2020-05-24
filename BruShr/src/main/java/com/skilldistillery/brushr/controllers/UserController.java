@@ -50,9 +50,11 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "loginUser.do", method = RequestMethod.POST)
-	public String loginUser(@RequestParam(name = "username") String username,
+	public String loginUser(@RequestParam(name = "loginName") String username,
 			@RequestParam(name = "password") String password, HttpSession session, Model model) {
 		User u = userDAO.findUserByUserName(username);
+		System.out.println("***************************************");
+		System.out.println(u);
 		if (u != null && u.getPassword().equals(password)) {
 			session.setAttribute("user", u);
 			return "profile";

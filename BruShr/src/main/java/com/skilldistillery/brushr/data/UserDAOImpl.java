@@ -25,7 +25,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User findUserByUserName(String name) {
-		String jpql = "SELECT u from User u WHERE u.login_name = :login";
+		String jpql = "SELECT u from User u WHERE u.loginName = :login";
 		User u = null;
 
 		if (em.createQuery(jpql, User.class).setParameter("login", name).getResultList().size() != 0) {

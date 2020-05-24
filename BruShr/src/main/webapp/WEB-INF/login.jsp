@@ -20,31 +20,21 @@ body {
 </head>
 <body>
 	This is where you login
-	<div class = "container-fluid">
-		<div class= "container">
-
-
-			<form>
-				<div class="form-group mt-3">
-					<label for="exampleInputEmail1">Email address</label> <input
-						type="email" class="form-control" id="loginemail"
-						placeholder="Enter email"> <small id="emailHelp"
-						class="form-text text-muted">We'll never share your email
-						with anyone else.</small>
+	<div class="container-fluid">
+		<div class="container">
+			<form action="loginUser.do" method="POST">
+				<div class="form-row">
+					<input type="text" name="loginName"></input>
+					<div class="form-group col-md-6">
+						<label for="inputPassword4">Password</label> <input
+							type="password" name="password" class="form-control"
+							id="inputPassword4" placeholder="Password">
+					</div>
 				</div>
-				<div class="form-group mt-3">
-					<label for="loginPassword">Password</label> <input type="password"
-						class="form-control" id="loginPassword" placeholder="Password">
-				</div>
-				<div class="form-check mt-3">
-					<input type="checkbox" class="form-check-input" id="exampleCheck1">
-					<label class="form-check-label" for="exampleCheck1">Check
-						me out</label>
-				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button type="submit" class="btn btn-warning">Sign in</button>
 			</form>
-
 		</div>
+
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
