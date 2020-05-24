@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.brushr.data.BeerDAO;
 import com.skilldistillery.brushr.data.UserDAO;
+import com.skilldistillery.brushr.entities.BeerRecipe;
 import com.skilldistillery.brushr.entities.User;
 
 @Controller
@@ -22,6 +23,9 @@ public class UserController {
 
 	@Autowired
 	private UserDAO userDAO;
+	
+	@Autowired
+	private BeerDAO beerDAO;
 
 	@RequestMapping(path = "createAccount.do", method = RequestMethod.GET)
 	public String createUserAccount() {
@@ -92,6 +96,14 @@ public class UserController {
 		return "index";
 	}
 
-	
+	@RequestMapping(path = {  "index.do" })
+	public String goIndex(Model model, HttpSession session) {
+		List<BeerRecipe> beer = beerDAO.getAllBeers();
+		model.addAttribute("beers", beer);
+		System.out.println("**************************");
+		session.getAttribute("user");
+		
+		return "index";
+	}	
 
 }
