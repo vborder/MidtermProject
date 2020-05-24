@@ -10,5 +10,7 @@
 <body>
 <p>${user.loginName}</p>
 <p>${user.lastName}</p>
+
+<a href="updateProfile.do?userName=${user.loginName}">EDIT ME</a>
 </body>
 </html>

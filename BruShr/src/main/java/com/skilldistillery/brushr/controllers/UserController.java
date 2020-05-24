@@ -65,19 +65,21 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "updateProfile.do", method = RequestMethod.GET)
-	public String updateProfile() {
-		return "profile";
+	public String updateProfile(@RequestParam(name = "userName")String userName, Model model, HttpSession session) {
+		//User user = userDAO.findUserByUserName(userName);
+		model.addAttribute("user", session.getAttribute("user"));
+		return "updateuser";
 	}
 
 	@RequestMapping(path = "updateProfile.do", method = RequestMethod.POST)
 	public String updateUserProfile(User user, HttpSession session, Model model) {
-		
-		User u =  (User) session.getAttribute("user");
-
-		userDAO.updateUser(u.getId(),u );
-																												// F
-		session.setAttribute("user", u);
-		return "profile";
+		System.out.println("*************************************");
+		System.out.println(user);
+		System.out.println(user.getId());
+		User updateUser = userDAO.updateUser(user.getId(), user);
+		System.out.println(updateUser);
+		model.addAttribute(updateUser);
+		return "success";
 		
 			
 	}

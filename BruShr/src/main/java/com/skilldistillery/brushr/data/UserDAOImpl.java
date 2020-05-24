@@ -1,5 +1,8 @@
 package com.skilldistillery.brushr.data;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
@@ -37,26 +40,28 @@ public class UserDAOImpl implements UserDAO {
 	@Override
 	public User updateUser(int id, User user) {
 		User u = em.find(User.class, id);
-		
+		LocalDateTime time = LocalDateTime.now();
 		u.setLoginName(user.getLoginName());
 		u.setPassword(user.getPassword());
-		
-		em.persist(u);
+		u.setFirstName(user.getFirstName());
+		u.setLastName(user.getLastName());
+		u.setUpdatedAt(time);
+		u.setId(user.getId());
 		em.flush();
-		
+		em.close();
 		return u;
 	}
 
 	@Override
 	public boolean deleteUser(User user) {
-		boolean deletedUser = false;
+		//boolean deletedUser = false;
 		
 		User u = em.find(User.class, user.getId());
 		
 		
 		em.remove(u);
 		em.flush();
-		deletedUser = true;
+		//deletedUser = true;
 		em.close();
 		
 		return !em.contains(u);
