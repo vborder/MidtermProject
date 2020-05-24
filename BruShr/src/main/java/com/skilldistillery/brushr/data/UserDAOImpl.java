@@ -20,6 +20,8 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User createUser(User user) {
+		LocalDateTime time = LocalDateTime.now();
+		user.setCreatedAt(time);
 		em.persist(user);
 		em.flush();
 		return user;

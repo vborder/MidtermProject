@@ -30,10 +30,10 @@ body {
 			<form action="createAccount.do" method="POST">
 				<div class="form-row">
 					<!-- THIS NEEDS TO BE ADDED TO THE DATABASE SCHEMA -->
-					<!-- <div class="form-group col-md-6">
+					<div class="form-group col-md-6">
 						<label for="inputEmail4">Email</label> 
-						<input type="text" class="form-control" name="loginName">
-					</div> -->
+						<input type="text" class="form-control" name="email">
+					</div>
 					<input type="text" name="firstName"></input> <input type="text"
 						name="lastName"></input> <input type="text" name="loginName"
 						placeholder="UserName" />
