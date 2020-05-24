@@ -300,6 +300,19 @@ COMMIT;
 
 
 -- -----------------------------------------------------
+-- Data for table `recipe_grain`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `brushrdb`;
+INSERT INTO `recipe_grain` (`grain_id`, `beer_id`, `grain_amount`) VALUES (1, 1, '1');
+INSERT INTO `recipe_grain` (`grain_id`, `beer_id`, `grain_amount`) VALUES (2, 2, '2');
+INSERT INTO `recipe_grain` (`grain_id`, `beer_id`, `grain_amount`) VALUES (3, 3, '3');
+INSERT INTO `recipe_grain` (`grain_id`, `beer_id`, `grain_amount`) VALUES (4, 5, '6');
+
+COMMIT;
+
+
+-- -----------------------------------------------------
 -- Data for table `favorites`
 -- -----------------------------------------------------
 START TRANSACTION;
