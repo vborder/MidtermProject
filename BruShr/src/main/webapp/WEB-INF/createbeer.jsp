@@ -10,28 +10,31 @@
 	href=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
+<link rel="stylesheet" href="resources/media/style.css" type="text/css">
 </head>
 <body>
-
-
-	<section class="section-padding">
+<%@ include file="navbar.jsp"%>
+<br>
+<br>
+	<div class="container-fluid">
+	
 		<div class="container">
 			<div class="row">
 				<h5>Add Beer Recipe</h5>
 				<form action="addBeer.do" method="POST">
 					<div class="form-group">
 						<label>Name: <input type="text" placeholder="Enter Name"
-							name="beerName" maxlength="45" autocomplete="off" />
+							name="beerName" autocomplete="off" />
 						</label>
 					</div>
 					<div class="form-group">
 						<label>Beer Recipe Type: <input type="text" placeholder="Enter Type of Beer"
-							name="beerType" maxlength="45" autocomplete="off"/>
+							name="beerType" autocomplete="off"/>
 						</label>
 					</div>
 					<div class="form-group">
-						<label>Description: <input type="text" placeholder="Enter Description"
-							name="description" maxlength="45" autocomplete="off"/>
+						<label>Description: <textarea class="form-control" type="text" placeholder="Enter Description"
+							name="description" rows="3" autocomplete="off"></textarea>
 						</label>
 					</div>
 					
@@ -41,8 +44,8 @@
 				</form>
 			</div>
 		</div>
-	</section>
-
+	</div>
+<%@ include file="footer.jsp"%>
 
 
 
