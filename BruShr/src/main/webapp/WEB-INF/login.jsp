@@ -7,31 +7,35 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-<link rel="spreadsheet" href="resources/style.css"></link>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-<style>
+<link
+	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
+<!-- <style>
 body {
 	background-color: red
 }
-</style>
+</style> -->
 </head>
-<body>
-	This is where you login
-	<div class="container-fluid">
-		<div class="container">
+<body class="bg-light">
+	<h1 class="text-center mt-5 mb-5 bg-info">BrüShr Login</h1>
+	<div class="container-fluid mt-5">
+		<div class="container mt-5">
 			<form action="loginUser.do" method="POST">
-				<div class="form-row">
-					<input type="text" name="loginName"></input>
-					<div class="form-group col-md-6">
-						<label for="inputPassword4">Password</label> <input
-							type="password" name="password" class="form-control"
-							id="inputPassword4" placeholder="Password">
+				<div>
+					<div class="form-row form-group ">
+						<input type="text" placeholder="User Name" name="loginName"class="text-center form-control mb-5" ></input>
+					</div>
+					<div class="">
+						<input type="password" name="password" class=" text-center form-control mb-5"
+							id="inputPassword4" placeholder="Password"></input>
 					</div>
 				</div>
-				<button type="submit" class="btn btn-warning">Sign in</button>
+				<button type="submit" class="btn btn-primary btn-lg btn-block font-weight-bold text-dark text-center">Sign in</button>
 			</form>
 		</div>
 
