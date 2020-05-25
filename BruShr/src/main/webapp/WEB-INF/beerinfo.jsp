@@ -43,8 +43,8 @@
 
 				<div class="changetext">
 					<a href="index.do" class="changetext" >HOME</a> 
-					<a href="#" class="changetext">EDIT</a> 
-					<a href="#" class="changetext">DELETE</a>
+					<a href="updateBeer.do" class="changetext">EDIT</a> 
+					<a href="deleteBeer.do" class="changetext">DELETE</a>
 				</div>
 			</div>
 		
