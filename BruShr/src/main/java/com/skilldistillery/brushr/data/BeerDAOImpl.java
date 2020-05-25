@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.brushr.entities.BeerRecipe;
+import com.skilldistillery.brushr.entities.User;
 
 @Service
 @Transactional
@@ -88,9 +89,16 @@ public class BeerDAOImpl implements BeerDAO{
 	}
 
 	@Override
-	public BeerRecipe createBeer(BeerRecipe beer) {
+	public BeerRecipe createBeer(BeerRecipe beer, User user) {
 		
-		em.persist(beer);
+
+		beer.addUser(user);
+		
+		
+		user.addBeer(beer); //  updated while MD    
+		
+		em.persist(beer);//
+		
 		em.flush();
 		em.close();
 		return beer;

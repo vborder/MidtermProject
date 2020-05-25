@@ -1,12 +1,18 @@
 package com.skilldistillery.brushr.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale.Category;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -34,9 +40,17 @@ public class User {
 	
 	@Column(name="login_name")
 	private String loginName;
+	
+	@OneToMany(mappedBy="user", cascade=CascadeType.PERSIST , fetch=FetchType.EAGER)
+	private List<BeerRecipe> beers;
 
+	public User() {
+		super();
+		
+	}
+	
 	public User(int id, String firstName, String lastName, String password, Boolean enabled, String role,
-			LocalDateTime createdAt, LocalDateTime updatedAt, String loginName) {
+			LocalDateTime createdAt, LocalDateTime updatedAt, String loginName, List<BeerRecipe> beers) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -47,13 +61,19 @@ public class User {
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
 		this.loginName = loginName;
+		this.beers = beers;
 	}
-	
-	public User() {
-		super();
 
-	}
 	
+	
+	public List<BeerRecipe> getBeers() {
+		return beers;
+	}
+
+	public void setBeers(List<BeerRecipe> beers) {
+		this.beers = beers;
+	}
+
 	// methods
 	public int getId() {
 		return id;
@@ -125,6 +145,22 @@ public class User {
 
 	public void setLoginName(String loginName) {
 		this.loginName = loginName;
+	}
+	
+	public void addBeer(BeerRecipe beerRecipe) {
+		if (beers == null) {
+			beers = new ArrayList<>();
+		}
+		if (!beers.contains(beerRecipe)) {
+			beers.add(beerRecipe);
+			beerRecipe.addUser(this);
+		}
+	}
+	public void deleteBeer(BeerRecipe beerRecipe) {
+		if (beers != null && beers.contains(beerRecipe)) {
+			beers.remove(beerRecipe);
+			beerRecipe.deleteUser(this);
+		}
 	}
 	
 	@Override

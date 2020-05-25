@@ -3,6 +3,7 @@ package com.skilldistillery.brushr.data;
 import java.util.List;
 
 import com.skilldistillery.brushr.entities.BeerRecipe;
+import com.skilldistillery.brushr.entities.User;
 
 public interface BeerDAO {
 	public List<BeerRecipe> getAllBeers();
@@ -11,5 +12,5 @@ public interface BeerDAO {
 	public List<BeerRecipe> getBeersByNameOrDescription(String style);
 	public boolean deleteBeer(int id);
 	public BeerRecipe updateBeer(int id, BeerRecipe beer);
-	public BeerRecipe createBeer(BeerRecipe beer);
+	public BeerRecipe createBeer(BeerRecipe beer, User user);
 }
