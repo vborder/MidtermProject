@@ -22,6 +22,8 @@ body {
 </style> -->
 </head>
 <body class="bg-light">
+
+<%@ include file="navbar.jsp"%>
 	<h1 class="text-center mt-5 mb-5 bg-info">BrüShr Login</h1>
 	<div class="container-fluid mt-5">
 		<div class="container mt-5">
@@ -40,6 +42,8 @@ body {
 		</div>
 	</div>
 
+
+<%@ include file="footer.jsp"%> 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
