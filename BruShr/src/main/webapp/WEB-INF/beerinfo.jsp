@@ -11,15 +11,12 @@
 	href=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
-<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
-	crossorigin="anonymous"></script>
-<link
-	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap"
-	rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="resources/style.css"></link>
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 </head>
 <body>
-	
+	  <%@ include file="navbar.jsp"%> 
 
 
 	<div class="card mt-5 ml-5 text-center bg-light mx-auto"
@@ -49,6 +46,9 @@
 			</div>
 		
 	</div>
+	
+	
+	 <%@ include file="footer.jsp"%>  
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
