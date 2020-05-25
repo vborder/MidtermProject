@@ -32,6 +32,9 @@ public class User {
 	
 	private String role;
 	
+	@Column(name="user_email")
+	private String email;
+	
 	@Column(name="created_at")
 	private LocalDateTime createdAt;
 	
