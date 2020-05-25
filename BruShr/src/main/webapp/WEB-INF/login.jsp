@@ -38,7 +38,6 @@ body {
 				<button type="submit" class="btn btn-primary btn-lg btn-block font-weight-bold text-dark text-center">Sign in</button>
 			</form>
 		</div>
-
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
