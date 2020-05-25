@@ -8,3 +8,11 @@ padding: 0;
 font-family: 'Cinzel', serif;
 font-size: 3em;
 }
+
+
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
