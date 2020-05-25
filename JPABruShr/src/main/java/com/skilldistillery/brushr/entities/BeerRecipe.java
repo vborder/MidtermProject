@@ -1,6 +1,7 @@
 package com.skilldistillery.brushr.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -202,6 +203,16 @@ public class BeerRecipe {
 			return false;
 		return true;
 	}
+	
+	public void addUser(User user) {
+		setUser(user);
+	}
+	public void deleteUser(User user) {
+		this.user = null;
+	}
+	
+	
+	
 
 	@Override
 	public String toString() {

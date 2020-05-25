@@ -39,6 +39,7 @@
 					</div>
 					
 					<br>
+					<input type="hidden" name = "user_id" value = "${sessionScope.user.id}">
 					<button type="submit" class="btn btn-success text-center">Add
 						Beer Recipe</button>
 				</form>

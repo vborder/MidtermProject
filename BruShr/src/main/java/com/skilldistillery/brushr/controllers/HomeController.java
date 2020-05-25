@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.brushr.data.BeerDAO;
 import com.skilldistillery.brushr.entities.BeerRecipe;
+import com.skilldistillery.brushr.entities.User;
 
 @Controller
 public class HomeController {
@@ -66,8 +68,10 @@ public class HomeController {
 	}
 	
 	@RequestMapping(path="addBeer.do", method = RequestMethod.POST)
-	public String createBeer(BeerRecipe beerRecipe, Model model) {
-		BeerRecipe beer = beerDAO.createBeer(beerRecipe);
+	public String createBeer(BeerRecipe beerRecipe, HttpSession session, Model model) {
+		
+		BeerRecipe beer = beerDAO.createBeer(beerRecipe, (User) session.getAttribute("user"));
+		
 		model.addAttribute("beer", beer);
 		
 		return "beerinfo";
