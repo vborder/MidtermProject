@@ -40,14 +40,11 @@
 							<div class="dropdown-menu">
 								<a class="dropdown-item" href="updateProfile.do">Update
 									Profile</a> 
-							</div></li>
+							</div>
+								<a class="text-white" href="logout.do">${user.loginName} Sign Out</a></li>
 					</c:if>
 				</ul>
-				<ul>
-					<c:if test="${sessionScope.user != null }">
-						<a class="text-white" href="logout.do">${user.loginName}, Sign Out</a>
-					</c:if>
-				</ul>
+				
 			</div>
 		</div>
 	</nav>
