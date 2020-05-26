@@ -22,9 +22,9 @@ public class HomeController {
 	@Autowired
 	private BeerDAO beerDAO;
 
-	public BeerDAO getDAO() {
-		return beerDAO;
-	}
+//	public BeerDAO getDAO() {
+//		return beerDAO;
+//	}
 
 	
 	@RequestMapping(path = { "/", "home.do" })
@@ -132,17 +132,24 @@ public class HomeController {
 	
 	
 	/////// deleteBeer/////////////
-	@RequestMapping(path="deleteBeer.do", method= RequestMethod.POST)
-	public String deleteBeer(@RequestParam(name= "id") int id, User user, Model model) {
-		boolean beerDelete = beerDAO.deleteBeer(id, user);
+	@RequestMapping(path="deleteBeer.do")
+//	public String deleteBeer(@RequestParam(name= "id") int id, User user, Model model) {
+//		boolean beerDelete = beerDAO.deleteBeer(id, user);
+//		
+////		model.addAttribute("deleted", beerDelete);
+//		if (beerDelete) {
+//			return "success";
+//		} else {
+//			
+//			return "fail";
+//		}
+	public String deleteBeer(Integer id, User user, Model model) {
+		System.out.println(id);
+		BeerRecipe b = beerDAO.getBeerById(id);
+		model.addAttribute("beer", b);
+		beerDAO.deleteBeer(id, user);
 		
-//		model.addAttribute("deleted", beerDelete);
-		if (beerDelete) {
-			return "success";
-		} else {
-			
-			return "fail";
-		}
+		return "success";
 		
 	}
 	
