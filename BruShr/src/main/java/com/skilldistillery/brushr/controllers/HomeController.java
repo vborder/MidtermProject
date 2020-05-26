@@ -22,9 +22,9 @@ public class HomeController {
 	@Autowired
 	private BeerDAO beerDAO;
 
-	public BeerDAO getDAO() {
-		return beerDAO;
-	}
+//	public BeerDAO getDAO() {
+//		return beerDAO;
+//	}
 
 	@RequestMapping(path = { "/", "home.do" })
 	public String goHome() {
@@ -125,25 +125,31 @@ public class HomeController {
 	}
 
 	/////// deleteBeer/////////////
-	@RequestMapping(path = "deleteBeer.do", method = RequestMethod.POST)
-	public String deleteBeer(@RequestParam(name = "id") int id, Model model) {
-		boolean beerDelete = beerDAO.deleteBeer(id);
-
-//		model.addAttribute("deleted", beerDelete);
-		if (beerDelete) {
-			return "success";
-		} else {
-
-			return "fail";
-		}
-
-	}
-
 	@RequestMapping(path = "addComment.do", method = RequestMethod.POST)
-	public String addCommentToBeer(@RequestParam(name = "id") int id, Comment comment, Model model, HttpSession session) {
+    public String addCommentToBeer(@RequestParam(name = "id") int id, Comment comment, Model model, HttpSession session) {
 		User user = (User) session.getAttribute("user"); 
 		beerDAO.createComment(id, comment, user);
 		return "beerinfo";
+  }
+	  @RequestMapping(path="deleteBeer.do")
+    // 	  public String deleteBeer(@RequestParam(name= "id") int id, User user, Model model) {
+    // 		boolean beerDelete = beerDAO.deleteBeer(id, user);
+		
+    //model.addAttribute("deleted", beerDelete);
+    // 		if (beerDelete) {
+    // 			return "success";
+    // 		} else {
+			
+    // 			return "fail";
+    // 		}
+  
+	public String deleteBeer(Integer id, User user, Model model) {
+		System.out.println(id);
+		BeerRecipe b = beerDAO.getBeerById(id);
+		model.addAttribute("beer", b);
+		beerDAO.deleteBeer(id, user);
+		
+		return "success";
 	}
 
 }

@@ -16,40 +16,40 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap"
 	rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="resources/style.css"></link>
+<link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 </head>
 <body>
 
+	<%@ include file="navbar.jsp"%>
 
 
-	<div class="card mt-5 ml-5 text-center bg-light mx-auto"
-		style="width: 18rem;">
+	<div class="card mt-5 ml-5 text-center bg-light mx-auto "
+		style="width: 50rem;">
 		<img class="card-img-top" src="resources/media/EspressoStout.jpg"
 			alt="Card image cap">
 		<div class="card-body">
-			<h3 class="card-title">${beer.beerName}</h3>
-			<hr>
-			<p class="card-text mb-5">${beer.beerType}</p>
-			<hr>
 
-
-			<p>${user.firstName}</p>
-			<p>${user.lastName}</p>
-			<p>${beer.id}</p>
-			<p>${beer.beerName}</p>
-			<p>${beer.beerType}</p>
-			<p>${beer.yeast}</p>
-			<p>${beer.description}</p>
+			<hr>
+			<h2><strong>Beer Name:   ${beer.beerName}</strong></h2>
+			<hr>
+			<h3><strong>Beer Type:   ${beer.beerType}</strong></h3>
+			<hr>
+			<h3><strong>Beer Yeast:    ${beer.yeast}</strong></h3>
+			<hr>
+			<p><strong>Beer Description</strong></p>
+			<p class="text-lowercase">${beer.description}</p>
 
 			<div class="changetext">
 				<a href="index.do" class="changetext">HOME</a> <a
-					href="updateBeer.do" class="changetext">EDIT</a> <a
-					href="deleteBeer.do" class="changetext">DELETE</a>
+					href="updateBeer.do?id=${beer.id}" class="changetext">EDIT</a> <a
+					href="deleteBeer.do?id=${beer.id}" class="changetext">DELETE</a>
 			</div>
 		</div>
 
-
 	</div>
+
+
+	<%@ include file="footer.jsp"%>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
