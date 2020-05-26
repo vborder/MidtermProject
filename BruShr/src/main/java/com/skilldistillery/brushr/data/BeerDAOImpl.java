@@ -108,14 +108,22 @@ public class BeerDAOImpl implements BeerDAO{
 	@Override
 	public Comment createComment(int id, Comment comment, User user) {
 		BeerRecipe beer = em.find(BeerRecipe.class, id);
+		User persistUser = em.find(User.class, user.getId());
+		persistUser.getComments().get(0);
+		
 		LocalDateTime time = LocalDateTime.now();
+		
+		
+		
 		beer.addComment(comment);
 		comment.setCreatedAt(time);
 		comment.addBeerRecipe(beer);
-		comment.setUser(user);
-		em.persist(beer);
+		comment.setUser(persistUser);
+		persistUser.addComment(comment);
+		
+		em.persist(comment);
 		em.flush();
-		em.close();
+	
 		return comment;
 	}
 	
