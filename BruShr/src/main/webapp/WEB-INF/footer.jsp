@@ -9,7 +9,7 @@
 <body>
 
 				<!-- Footer-->
-        <footer class="footer text-center py-5 bg-dark">
+        <footer class="footer text-center py-5 bg-dark" id="footer">
             <div class="container">
                 <div class="row">
                     <!-- Footer Location-->
