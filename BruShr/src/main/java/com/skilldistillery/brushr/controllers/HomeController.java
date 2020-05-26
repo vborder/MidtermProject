@@ -130,26 +130,20 @@ public class HomeController {
 		return "success";
 	}
 	
-	
 	/////// deleteBeer/////////////
 	@RequestMapping(path="deleteBeer.do")
-//	public String deleteBeer(@RequestParam(name= "id") int id, User user, Model model) {
-//		boolean beerDelete = beerDAO.deleteBeer(id, user);
-//		
-////		model.addAttribute("deleted", beerDelete);
-//		if (beerDelete) {
-//			return "success";
-//		} else {
-//			
-//			return "fail";
-//		}
-	public String deleteBeer(Integer id, User user, Model model) {
-		System.out.println(id);
+	public String deleteBeer(@RequestParam(name= "id") Integer id, User user, HttpSession session, Model model) {
 		BeerRecipe b = beerDAO.getBeerById(id);
-		model.addAttribute("beer", b);
-		beerDAO.deleteBeer(id, user);
-		
-		return "success";
+		User loggedInUser = (User) session.getAttribute("user");
+//		
+		boolean beerDelete = beerDAO.deleteBeer(id, loggedInUser);
+		System.out.println(id + "" + user);
+		if (beerDelete) {
+			return "success";
+		}
+		else {
+			return "fail";
+		}
 		
 	}
 	
