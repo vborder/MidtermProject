@@ -141,5 +141,14 @@ public class HomeController {
 			return "fail";
 		}
 	}
+	
+	@RequestMapping(path = "addComment.do", method = RequestMethod.POST)
+    public String addCommentToBeer(@RequestParam(name = "beerId") int id, Comment comment, Model model, HttpSession session) {
+		User user = (User) session.getAttribute("user"); 
+		BeerRecipe b = beerDAO.getBeerById(id);
+		model.addAttribute(b);
+		beerDAO.createComment(id, comment, user);
+		return getBeerById(id, model);
+  }
 
 }
