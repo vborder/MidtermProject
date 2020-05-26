@@ -3,7 +3,6 @@ package com.skilldistillery.brushr.entities;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale.Category;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -46,6 +45,9 @@ public class User {
 	
 	@OneToMany(mappedBy="user", cascade=CascadeType.PERSIST , fetch=FetchType.EAGER)
 	private List<BeerRecipe> beers;
+	
+	@OneToMany(mappedBy="user", cascade=CascadeType.PERSIST)
+	private List<Comment> comments;
 
 	public User() {
 		super();
@@ -67,8 +69,22 @@ public class User {
 		this.beers = beers;
 	}
 
-	
-	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
 	public List<BeerRecipe> getBeers() {
 		return beers;
 	}
@@ -163,6 +179,24 @@ public class User {
 		if (beers != null && beers.contains(beerRecipe)) {
 			beers.remove(beerRecipe);
 			beerRecipe.deleteUser(this);
+		}
+	}
+	
+	public void addComment(Comment comment) {
+		if(comments == null) {
+			comments = new ArrayList<>();
+		}
+		
+		if(!comments.contains(comment)) {
+			comments.add(comment);
+			comment.setUser(this);
+		}
+	}
+	
+	public void deleteComment(Comment comment) {
+		if(comments != null && comments.contains(comment)) {
+			comments.remove(comment);
+			comment.setUser(null);
 		}
 	}
 	

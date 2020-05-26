@@ -19,6 +19,7 @@
 <link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 </head>
 <body>
+
 	<%@ include file="navbar.jsp"%>
 
 
@@ -27,15 +28,7 @@
 		<img class="card-img-top" src="resources/media/EspressoStout.jpg"
 			alt="Card image cap">
 		<div class="card-body">
-			<%-- <h2 class="card-title">${beer.beerName}</h2>
-			<hr>
-			<h3 class="card-text mb-5">${beer.beerType}</h3>
-			<hr> --%>
 
-
-			<%-- <p>${user.firstName}</p>
-			<p>${user.lastName}</p>
-			<p>${beer.id}</p> --%>
 			<hr>
 			<h2>
 				<strong>Beer Name: ${beer.beerName}</strong>
