@@ -18,20 +18,17 @@
 					aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+				
 				<div class="navbar-collapse collapse navbar-nav pull-right"
 					id="collapsibleNavbar">
 					<ul class="navbar-nav ml-auto">
-						<c:if test="${sessionScope.user == null }">
+						<c:if test="${sessionScope.user != null}">
 							<li><a class="btn btn-primary" href="login.do">Sign In</a></li>
 							<li><a class="btn btn-success" href="createAccount.do">Create
 									Account</a></li>
 									<li class="nav-item active"><a class="nav-link"
 							href="index.do">Home | <span class="sr-only">(current)</span>
-						</a></li>
-						<li class="nav-item active"><a class="nav-link"
-							href="BeersByNameOrDescription.do"> Search Beer Recipe |</a></li>
-						<li class="nav-item active"><a class="nav-link"
-							href="about.do"> ABOUT</a></li>
+						</a>
 						</c:if>
 						</ul>
 						
@@ -40,11 +37,7 @@
 							<ul>
 								<li class="nav-item"><a class="nav-link" href="addBeer.do">Add
 										Beer Recipe</a></li>
-								<li><a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">${sessionScope.user.loginName}</a></li>
-									<div class="dropdown-menu">
-										<a class="dropdown-item" href="updateProfile.do">Update
-											Profile</a></li>
-									</div>
+								<li><a class="nav-item" href="updateProfile.do">Update Profile ${sessionScope.user.loginName}</a></li>
 									<li class="nav-item dropdown"><a class="text-white" href="logout.do">${sessionScope.user.loginName}
 								Sign Out</a>
 							</li>
@@ -59,8 +52,13 @@
 							</c:otherwise>
 							
 						</c:choose>
-							
-
+						<ul>	
+						</li>
+						<li class="nav-item active"><a class="nav-link"
+							href="BeersByNameOrDescription.do"> Search Beer Recipe |</a></li>
+						<li class="nav-item active"><a class="nav-link"
+							href="about.do"> ABOUT</a></li>
+							</ul>
 				</div>
 			</div>
 		
