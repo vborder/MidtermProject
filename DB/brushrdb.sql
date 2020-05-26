@@ -47,7 +47,7 @@ CREATE TABLE IF NOT EXISTS `beer_recipe` (
   `beer_type` VARCHAR(200) NULL,
   `yeast` VARCHAR(1000) NULL,
   `description` TEXT NULL,
-  `enabled` TINYINT NULL,
+  `enabled` TINYINT NOT NULL DEFAULT 1,
   `created_at` DATETIME NULL,
   `updated_at` DATETIME NULL,
   `img_url` TEXT(1000) NULL,
