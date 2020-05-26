@@ -1,5 +1,6 @@
 package com.skilldistillery.brushr.data;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,6 +10,7 @@ import javax.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import com.skilldistillery.brushr.entities.BeerRecipe;
+import com.skilldistillery.brushr.entities.Comment;
 import com.skilldistillery.brushr.entities.User;
 
 @Service
@@ -67,7 +69,8 @@ public class BeerDAOImpl implements BeerDAO{
 		
 		em.flush();
 		em.close();
-		return isDeleted;
+
+		return isDeleted;	
 	}
 
 	@Override
@@ -83,7 +86,6 @@ public class BeerDAOImpl implements BeerDAO{
 		b.setCreatedAt(beer.getCreatedAt());
 		b.setUpdatedAt(beer.getUpdatedAt());
 		b.setImgUrl(beer.getImgUrl());
-		
 		em.flush();
 		em.close();
 		return b;
@@ -91,20 +93,29 @@ public class BeerDAOImpl implements BeerDAO{
 
 	@Override
 	public BeerRecipe createBeer(BeerRecipe beer, User user) {
-		beer.addUser(user);
+		beer.addUser(user);	
 		user.addBeer(beer); //  updated while MD    
-		beer.setEnabled(true);
+    beer.setEnabled(true);
 		em.persist(beer);
-		
 		em.flush();
 		em.close();
 		return beer;
 	}
+	
+	@Override
+	public Comment createComment(int id, Comment comment, User user) {
+		BeerRecipe beer = em.find(BeerRecipe.class, id);
+		LocalDateTime time = LocalDateTime.now();
+		beer.addComment(comment);
+		comment.setCreatedAt(time);
+		comment.addBeerRecipe(beer);
+		comment.setUser(user);
+		em.persist(beer);
+		em.flush();
+		em.close();
+		return comment;
+	}
+	
+	//@override Comment 
 
-
-	
-	
-	
-	
-	
 }

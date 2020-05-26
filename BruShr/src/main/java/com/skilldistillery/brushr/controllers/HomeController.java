@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.skilldistillery.brushr.data.BeerDAO;
 import com.skilldistillery.brushr.entities.BeerRecipe;
+import com.skilldistillery.brushr.entities.Comment;
 import com.skilldistillery.brushr.entities.User;
 
 @Controller
@@ -26,10 +26,9 @@ public class HomeController {
 //		return beerDAO;
 //	}
 
-	
 	@RequestMapping(path = { "/", "home.do" })
 	public String goHome() {
-		
+
 		return "home";
 	}
 
@@ -42,46 +41,42 @@ public class HomeController {
 //		System.out.println("user");
 //		return "index";
 //	}
-	
-	
-	
-	///////getBeerById//////////
+
+	/////// getBeerById//////////
 	@RequestMapping(path = "beer.do", params = "id", method = RequestMethod.GET)
 	public String beerById(@RequestParam(name = "id") int id, Model model) {
-		
-		
+
 		BeerRecipe beer = beerDAO.getBeerById(id);
-		
-		if(beer != null) {
+
+		if (beer != null) {
 			model.addAttribute("beer", beer);
 			return "beerinfo";
 		} else {
 			return "fail";
 		}
 	}
-	
-	///////createBeer/////////
-	@RequestMapping(path="addBeer.do", method= RequestMethod.GET)
-	public String createBeerItem( Model model) {
-		
+
+	/////// createBeer/////////
+	@RequestMapping(path = "addBeer.do", method = RequestMethod.GET)
+	public String createBeerItem(Model model) {
+
 		return "createbeer";
 	}
-	
-	@RequestMapping(path="addBeer.do", method = RequestMethod.POST)
+
+	@RequestMapping(path = "addBeer.do", method = RequestMethod.POST)
 	public String createBeer(BeerRecipe beerRecipe, HttpSession session, Model model) {
-		
+
 		BeerRecipe beer = beerDAO.createBeer(beerRecipe, (User) session.getAttribute("user"));
-		
+
 		model.addAttribute("beer", beer);
-		
+
 		return "beerinfo";
 	}
-	
 
 	////// LIST of Beers//////
 	@RequestMapping(path = "listBeers.do", params = "FIXME", method = RequestMethod.GET)
 	public String getAllBeers(@RequestParam(name = "FIXME") String beerByKeyword, Model model) {
-		
+
 		if (beerByKeyword != "") {
 			List<BeerRecipe> beers = beerDAO.getBeersByStyle(beerByKeyword);
 			if (beers != null) {
@@ -102,29 +97,28 @@ public class HomeController {
 		model.addAttribute("beer", beer);
 		return "beerinfo";//
 	}
-	
+
 	/////// getBeersByNameOrDscription
-	@RequestMapping(path = "BeersByNameOrDscription.do", params="FIXME", method= RequestMethod.GET)
-	public String getBeersByNameOrDescription(@RequestParam(name="FIXME")String name, Model model) {
-		List<BeerRecipe> beerlist = beerDAO.getBeersByNameOrDescription(name);//did we pass in an id
-		
+	@RequestMapping(path = "BeersByNameOrDscription.do", params = "FIXME", method = RequestMethod.GET)
+	public String getBeersByNameOrDescription(@RequestParam(name = "FIXME") String name, Model model) {
+		List<BeerRecipe> beerlist = beerDAO.getBeersByNameOrDescription(name);// did we pass in an id
+
 		return "beerlist";
 	}
 
-
 	/////// updateBeer
-	@RequestMapping(path="updateBeer.do",  method= RequestMethod.GET)
-	public String updateBeer(@RequestParam(name="id") int id, Model model) {
+	@RequestMapping(path = "updateBeer.do", method = RequestMethod.GET)
+	public String updateBeer(@RequestParam(name = "id") int id, Model model) {
 		System.out.println("A bunch of asterix I AM HERE REALLY I AM YOU ARE ONLY HURTING YOURSELF" + id);
 		BeerRecipe beer = beerDAO.getBeerById(id);
 		model.addAttribute("beer", beer);
-		 
+
 		return "updatebeer";
 	}
-	
-	@RequestMapping(path="updateBeer.do", method= RequestMethod.POST)
-	public String updateBeerItem(@RequestParam(name="id") int id, Model model) {
-									
+
+	@RequestMapping(path = "updateBeer.do", method = RequestMethod.POST)
+	public String updateBeerItem(@RequestParam(name = "id") int id, Model model) {
+
 		BeerRecipe beer = beerDAO.getBeerById(id);
 		model.addAttribute("beer", beer);
 		return "success";
@@ -144,7 +138,6 @@ public class HomeController {
 		else {
 			return "fail";
 		}
-		
 	}
-	
+
 }

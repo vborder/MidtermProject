@@ -146,5 +146,13 @@ public class Comment {
 		return "Comment [id=" + id + ", updatedAt=" + updatedAt + ", createdAt=" + createdAt + ", enabled=" + enabled
 				+ ", content=" + content + ", rating=" + rating + ", user=" + user + ", beer=" + beer + "]";
 	}
+
+	public void addBeerRecipe(BeerRecipe beerRecipe) {
+		setBeer(beerRecipe);
+	}
+	
+	public void deleteBeer(BeerRecipe beerRecipe) {
+		setBeer(null);
+	}
 	
 }
