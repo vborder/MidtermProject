@@ -22,7 +22,8 @@ public class BeerDAOImpl implements BeerDAO{
 	
 	@Override
 	public List<BeerRecipe> getAllBeers(){
-		String jpql = " SELECT beer FROM BeerRecipe beer AND b.enabled = true";
+		String jpql = " SELECT beer FROM BeerRecipe beer";
+//		AND b.enabled = true"
 		
 		List<BeerRecipe> listOfBeers = em.createQuery(jpql, BeerRecipe.class).getResultList();
 	
@@ -32,7 +33,7 @@ public class BeerDAOImpl implements BeerDAO{
 	@Override
 	public BeerRecipe getBeerById(int id) {
 		BeerRecipe b =  em.find(BeerRecipe.class, id);
-		
+		System.out.println(id + "" + b);
 		return b.isEnabled() ? b : null;
 		
 	}
@@ -99,7 +100,7 @@ public class BeerDAOImpl implements BeerDAO{
 	public BeerRecipe createBeer(BeerRecipe beer, User user) {
 		beer.addUser(user);
 		user.addBeer(beer); //  updated while MD    
-		
+		beer.setEnabled(true);
 		em.persist(beer);
 		
 		em.flush();
