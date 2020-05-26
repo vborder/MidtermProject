@@ -126,8 +126,12 @@ public class HomeController {
 
 	/////// deleteBeer/////////////
 	@RequestMapping(path = "addComment.do", method = RequestMethod.POST)
-    public String addCommentToBeer(@RequestParam(name = "id") int id, Comment comment, Model model, HttpSession session) {
+    public String addCommentToBeer(@RequestParam(name = "beerId") int id, Comment comment, Model model, HttpSession session) {
 		User user = (User) session.getAttribute("user"); 
+		System.out.println(comment);
+
+		System.out.println("****************************************L O O K H E R E***********************************************************");
+		System.out.println(user);
 		beerDAO.createComment(id, comment, user);
 		return "beerinfo";
   }

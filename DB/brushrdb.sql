@@ -68,7 +68,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `comment` ;
 
 CREATE TABLE IF NOT EXISTS `comment` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `updated_at` DATETIME NULL,
   `created_at` DATETIME NULL,
   `enabled` TINYINT(1) NULL,
