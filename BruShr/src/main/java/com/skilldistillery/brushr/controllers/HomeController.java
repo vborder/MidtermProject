@@ -132,9 +132,9 @@ public class HomeController {
 	
 	
 	/////// deleteBeer/////////////
-	@RequestMapping(path="deleteBeer.do", method = RequestMethod.POST)
-	public String deleteBeer(@RequestParam(name= "id") int id, Model model) {
-		boolean beerDelete = beerDAO.deleteBeer(id);
+	@RequestMapping(path="deleteBeer.do", method= RequestMethod.POST)
+	public String deleteBeer(@RequestParam(name= "id") int id, User user, Model model) {
+		boolean beerDelete = beerDAO.deleteBeer(id, user);
 		
 //		model.addAttribute("deleted", beerDelete);
 		if (beerDelete) {
