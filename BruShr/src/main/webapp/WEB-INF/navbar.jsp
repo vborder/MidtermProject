@@ -31,6 +31,7 @@
 						href="BeersByNameOrDescription.do"> Search Beer Recipe |</a></li>
 					<li class="nav-item active"><a class="nav-link"
 						href="about.do"> ABOUT</a></li>
+						
 					<c:if test="${sessionScope.user != null }">
 						<li class="nav-item"><a class="nav-link" href="addBeer.do">Add
 								Beer Recipe</a></li>
@@ -44,9 +45,9 @@
 					</c:if>
 				</ul>
 				<ul>
-					<c:if test="${sessionScope.user != null }">
+<%-- 					<c:if test="${sessionScope.user != null }">
 						<li><a class="btn btn-success" href="logout.do">Sign Out</a></li>
-					</c:if>
+					</c:if> --%>
 				</ul>
 			</div>
 		</div>

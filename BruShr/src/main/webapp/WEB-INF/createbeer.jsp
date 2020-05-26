@@ -62,8 +62,9 @@
 								<option value="2">Lager</option>
 							</select>
 						</div>
-						<div class="form-group">
-						<div class="col-sm-9">
+						<br>
+						<div class="input-group mb-auto">
+						<div class="col-sm-12">
 							<label class="input-group-text col-md-12" name="description">Description: </label><textarea class="form-control"
 									type="text" placeholder="Enter Description" name="description"
 									rows="4" columns="140" autocomplete="off"></textarea>
