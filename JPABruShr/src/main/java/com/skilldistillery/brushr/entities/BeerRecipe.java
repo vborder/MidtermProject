@@ -16,44 +16,47 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="beer_recipe")
+@Table(name = "beer_recipe")
 public class BeerRecipe {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@Column(name="beer_name")
+
+	@Column(name = "beer_name")
 	private String beerName;
-	
-	@Column(name="beer_type")
+
+	@Column(name = "beer_type")
 	private String beerType;
-	
+
 	private String yeast;
-	
+
 	private String description;
-	
+
 	private Boolean enabled;
-	
-	@Column(name="created_at")
+
+	@Column(name = "created_at")
 	private LocalDateTime createdAt;
-	
-	@Column(name="updated_at")
+
+	@Column(name = "updated_at")
 	private LocalDateTime updatedAt;
-	
-	@Column(name="img_url")
+
+	@Column(name = "img_url")
 	private String imgUrl;
-	
+
+	@OneToMany(mappedBy = "beer", cascade = CascadeType.PERSIST)
+	private List<Comment> comments;
+
 	@ManyToOne
-	@JoinColumn(name="user_id")
+	@JoinColumn(name = "user_id")
 	private User user;
-	
-	@OneToMany(mappedBy = "beer", cascade=CascadeType.PERSIST)
+
+	@OneToMany(mappedBy = "beer", cascade = CascadeType.PERSIST)
 	private List<RecipeHops> recipeHops;
-	
-	@OneToMany(mappedBy = "beer", cascade=CascadeType.PERSIST)
+
+	@OneToMany(mappedBy = "beer", cascade = CascadeType.PERSIST)
 	private List<RecipeGrain> recipeGrains;
-	
+
 	public BeerRecipe(int id, String beerName, String beerType, String yeast, String description, Boolean enabled,
 			LocalDateTime createdAt, LocalDateTime updatedAt, String imgUrl, User user, List<RecipeHops> recipeHops,
 			List<RecipeGrain> recipeGrains) {
@@ -71,7 +74,7 @@ public class BeerRecipe {
 		this.recipeHops = recipeHops;
 		this.recipeGrains = recipeGrains;
 	}
-	
+
 	public BeerRecipe() {
 		super();
 	}
@@ -80,11 +83,11 @@ public class BeerRecipe {
 	public List<RecipeGrain> getRecipeGrains() {
 		return recipeGrains;
 	}
-	
+
 	public void setRecipeGrains(List<RecipeGrain> recipeGrains) {
 		this.recipeGrains = recipeGrains;
 	}
-	
+
 	public int getId() {
 		return id;
 	}
@@ -156,8 +159,7 @@ public class BeerRecipe {
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
 	}
-	
-	
+
 	public Boolean getEnabled() {
 		return enabled;
 	}
@@ -203,16 +205,41 @@ public class BeerRecipe {
 			return false;
 		return true;
 	}
-	
+
 	public void addUser(User user) {
 		setUser(user);
 	}
+
 	public void deleteUser(User user) {
 		this.user = null;
 	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comment) {
+		this.comments = comment;
+	}
 	
+	public void addComment(Comment comment) {
+		if(comments == null) {
+			comments = new ArrayList<>();
+			comments.add(comment);
+		}
+		
+		if(!comments.contains((comment))) {
+			comments.add(comment);
+			comment.addBeerRecipe(this);
+		}
+	}
 	
-	
+	public void deleteComment(Comment comment) {
+		if(comments != null && comments.contains(comment)) {
+			comments.remove(comment);
+			comment.deleteBeer(this);
+		}
+	}
 
 	@Override
 	public String toString() {

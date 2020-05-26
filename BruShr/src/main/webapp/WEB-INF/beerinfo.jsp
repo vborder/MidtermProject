@@ -19,7 +19,7 @@
 <link rel="stylesheet" type="text/css" href="resources/style.css"></link>
 </head>
 <body>
-	
+
 
 
 	<div class="card mt-5 ml-5 text-center bg-light mx-auto"
@@ -32,22 +32,23 @@
 			<p class="card-text mb-5">${beer.beerType}</p>
 			<hr>
 
-			
-				<p>${user.firstName}</p>
-				<p>${user.lastName}</p>
-				<p>${beer.id}</p>
-				<p>${beer.beerName}</p>
-				<p>${beer.beerType}</p>
-				<p>${beer.yeast}</p>
-				<p>${beer.description}</p>
 
-				<div class="changetext">
-					<a href="index.do" class="changetext" >HOME</a> 
-					<a href="updateBeer.do" class="changetext">EDIT</a> 
-					<a href="deleteBeer.do" class="changetext">DELETE</a>
-				</div>
+			<p>${user.firstName}</p>
+			<p>${user.lastName}</p>
+			<p>${beer.id}</p>
+			<p>${beer.beerName}</p>
+			<p>${beer.beerType}</p>
+			<p>${beer.yeast}</p>
+			<p>${beer.description}</p>
+
+			<div class="changetext">
+				<a href="index.do" class="changetext">HOME</a> <a
+					href="updateBeer.do" class="changetext">EDIT</a> <a
+					href="deleteBeer.do" class="changetext">DELETE</a>
 			</div>
-		
+		</div>
+
+
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
