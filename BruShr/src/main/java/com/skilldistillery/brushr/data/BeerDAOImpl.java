@@ -59,19 +59,17 @@ public class BeerDAOImpl implements BeerDAO{
 	@Override
 	public boolean deleteBeer(int id, User user) {
 		boolean isDeleted = false;
-		User u = em.find(User.class, id);
+		User u = em.find(User.class, user.getId());
 		BeerRecipe b = em.find(BeerRecipe.class, id);
 		
 		if (u != null && b != null) {
 			b.setEnabled(false);
+			isDeleted = true;
 		}
-//		b.setEnabled(false);
-//		em.flush();
 		
-//		if(em.find(BeerRecipe.class, id).getEnabled() == false) {
-//			isDeleted = true;
-//		}
+		em.flush();
 		em.close();
+
 		return isDeleted;	
 	}
 
@@ -88,7 +86,6 @@ public class BeerDAOImpl implements BeerDAO{
 		b.setCreatedAt(beer.getCreatedAt());
 		b.setUpdatedAt(beer.getUpdatedAt());
 		b.setImgUrl(beer.getImgUrl());
-				
 		em.flush();
 		em.close();
 		return b;
