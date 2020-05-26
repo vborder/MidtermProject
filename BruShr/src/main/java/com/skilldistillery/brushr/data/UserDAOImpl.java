@@ -54,14 +54,10 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public boolean deleteUser(User user) {
-		//boolean deletedUser = false;
-		
 		User u = em.find(User.class, user.getId());
-		
 		
 		em.remove(u);
 		em.flush();
-		//deletedUser = true;
 		em.close();
 		
 		return !em.contains(u);
