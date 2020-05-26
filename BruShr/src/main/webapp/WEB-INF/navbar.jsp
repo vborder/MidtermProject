@@ -45,9 +45,9 @@
 					</c:if>
 				</ul>
 				<ul>
-<%-- 					<c:if test="${sessionScope.user != null }">
+				<c:if test="${sessionScope.user != null }">
 						<li><a class="btn btn-success" href="logout.do">Sign Out</a></li>
-					</c:if> --%>
+					</c:if> 
 				</ul>
 			</div>
 		</div>
