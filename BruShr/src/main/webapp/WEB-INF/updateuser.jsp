@@ -28,7 +28,7 @@
 						<fieldset>
 							<div>
 								<h5 class="card-title text-center">Update Profile</h5>
-									<p> ${user.firstName} </p>
+									<p>Welcome, ${user.loginName} !</p>
 									
 									
 							</div>
@@ -37,8 +37,8 @@
 								<label class="control-label" for="loginName">User name:
 								</label> 
 								
-								 <input class="form-control" type="hidden" name="loginName"
-									placeHolder="${sessionScope.user.loginName}" />
+								 <input class="form-control" type="loginName" name="loginName"
+									placeHolder="${sessionScope.user.loginName}" autocomplete="off" required/>
 							</div>
 
 							<!-- firstName -->
@@ -73,13 +73,13 @@
 								<label class="control-label" for="password">Password: </label>
 								
 									<input class="form-control" type="password" name="password" placeholder="Enter Password"
-										value="${sessionScope.user.password}" required/>
+										value="${sessionScope.user.password}" autocomplete="off" required/>
 									<p><small>Password should be at least 6 characters</small></p>
 									<input class="form-control" type="hidden" name="id" value="${user.id}" />
 							
 							</div>
 							<!-- update.do -->
-							<div class="conrol-group">
+							<div class="control-group">
 								<div class="controls"></div>
 							</div>
 							<input class="btn btn-success btn-block" type="submit" value="submit" />
