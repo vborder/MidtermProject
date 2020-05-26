@@ -39,7 +39,7 @@
 						<div class="input-group mb-auto">
 							<div class="input-group-prepend">
 								<label class="input-group-text col-md-12"
-									for="inputGroupSelect01">Beer type</label>
+									for="inputGroupSelect01" name="beerType">Beer type</label>
 							</div>
 
 							<select class="selectpicker" data-width="auto"
@@ -53,7 +53,7 @@
 						<br>
 						<div class="input-group mb-auto">
 							<div class="input-group-prepend">
-								<label class="input-group-text col-md-12" for="inputGroupSelect01">Yeast</label>
+								<label class="input-group-text col-md-12" for="inputGroupSelect01" name="yeast">Yeast</label>
 							</div>
 							<select class="selectpicker" data-width="auto"
 								id="inputGroupSelect01">
@@ -64,9 +64,9 @@
 						</div>
 						<div class="form-group">
 						<div class="col-sm-9">
-							<label>Description: </label><textarea class="form-control"
+							<label class="input-group-text col-md-12" name="description">Description: </label><textarea class="form-control"
 									type="text" placeholder="Enter Description" name="description"
-									rows="4" columns="80" autocomplete="off"></textarea>
+									rows="4" columns="140" autocomplete="off"></textarea>
 						</div>
 						</div>
 

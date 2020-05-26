@@ -108,7 +108,7 @@
 			</div>
 			<div class="row">
 				<c:forEach var="beer" items="${beers}">
-					<c:if test="${not empty beer && beer.enabled==true}">
+					<c:if test="${not empty beer }">
 						<div class="col-lg-4 col-md-6 mb-4">
 							<div class="card h-100">
 								<h2 class="text-center">Beer Recipe</h2>
