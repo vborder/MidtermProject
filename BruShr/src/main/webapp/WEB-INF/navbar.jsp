@@ -35,15 +35,11 @@
 
 					<c:choose>
 						<c:when test="${sessionScope.user != null }">
-
-							<ul>
-								<li class="nav-item"><a class="nav-link" href="addBeer.do">Add
-										Beer Recipe</a></li>
-								<li><a class="nav-item" href="updateProfile.do">Update
-										Profile ${sessionScope.user.loginName}</a></li>
-								<li class="nav-item dropdown"><a class="text-white"
-									href="logout.do">${sessionScope.user.loginName} Sign Out</a></li>
-							</ul>
+								<a class="nav-link" href="addBeer.do">Add
+										Beer Recipe |</a>
+								<a class="text-white" href="updateProfile.do">Update ${sessionScope.user.loginName} |</a>
+								<a class="text-white" href="logout.do">${sessionScope.user.loginName} Sign Out |</a>
+							
 						</c:when>
 
 
@@ -51,17 +47,17 @@
 						<c:otherwise>
 							<ul class="navbar-nav">
 								<li class="nav-item active"><a class="nav-link"
-									href="login.do"> Log in</a></li>
+									href="login.do"> Log in |</a></li>
 							</ul>
 						</c:otherwise>
 					</c:choose>
-					<ul>
-						</li>
-						<li class="nav-item active"><a class="nav-link"
-							href="BeersByNameOrDescription.do"> Search Beer Recipe </a></li>
-						<li class="nav-item active"><a class="nav-link"
-							href="about.do"> ABOUT</a></li>
-					</ul>
+					
+						
+						<a class="nav-link"
+							href="BeersByNameOrDescription.do"> Search Beer Recipe |</a>
+						<a class="nav-link"
+							href="about.do"> ABOUT</a>
+					
 				</div>
 			</div>
 

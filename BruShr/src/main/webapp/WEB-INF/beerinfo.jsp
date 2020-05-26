@@ -58,14 +58,16 @@
 
 	</div>
 
-	<div>
-		<div>
-			<form action="addComment.do" method="POST">
-				<textarea rows="3" name="content" placeholder="Comment"></textarea>
-
+	<div class= "container-fluid mt-5" >
+		<div class= "container">
+			<form action="addComment.do" method="POST" >
+				<textarea rows="8" cols="50" name="content" placeholder="Comment"></textarea>
+				<div id="center">
 				<input type="hidden" name="beerId" value="${beer.id}"></input>
-				<button type="submit" name="submit" value="submit"
-					class=" btn btn-danger"></button>
+				<input type="submit" name="submit" value="submit"
+					class="text-center btn btn-danger btn-lg mt-3"></input>
+				
+				</div>
 
 			</form>
 		</div>
@@ -77,7 +79,7 @@
 
 	<!-- user comments  -->
 
-	<div class="container-fluid mt-5 mb-5 border border-danger"
+	<div class="container-fluid mt-5 mb-5 border border-danger mx-auto"
 		style="width: 50rem;">
 		<div class=" container list-unstyled ">
 
