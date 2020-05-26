@@ -37,16 +37,24 @@
 			<p>${user.lastName}</p>
 			<p>${beer.id}</p> --%>
 			<hr>
-			<h2><strong>Beer Name:   ${beer.beerName}</strong></h2>
+			<h2>
+				<strong>Beer Name: ${beer.beerName}</strong>
+			</h2>
 			<hr>
-			<h3><strong>Beer Type:   ${beer.beerType}</strong></h3>
+			<h3>
+				<strong>Beer Type: ${beer.beerType}</strong>
+			</h3>
 			<hr>
-			<h3><strong>Beer Yeast:    ${beer.yeast}</strong></h3>
+			<h3>
+				<strong>Beer Yeast: ${beer.yeast}</strong>
+			</h3>
 			<hr>
-			<p><strong>Beer Description</strong></p>
+			<p>
+				<strong>Beer Description</strong>
+			</p>
 			<p class="text-lowercase">${beer.description}</p>
 
-			<div class="changetext">
+			<div class="changetext mb-5">
 				<a href="index.do" class="changetext">HOME</a> <a
 					href="updateBeer.do?id=${beer.id}" class="changetext">EDIT</a> <a
 					href="deleteBeer.do?id=${beer.id}" class="changetext">DELETE</a>
@@ -54,6 +62,55 @@
 		</div>
 
 	</div>
+
+
+
+
+	<div class="container-fluid mt-5 mb-5 border border-danger" style="width: 50rem;">
+		<div class=" container list-unstyled ">
+		
+		
+			<c:forEach var="comment" items="${beer.comments}">
+				<c:if test="${not empty beer.comments}">
+				
+				
+					<div class="media-body">
+						<h3 class="mt-0 mb-1">${comment.user.firstName}  ${comment.user.lastName} </h3>
+						<p>${comment.content}</p>
+					</div>
+
+				</c:if>
+			</c:forEach>
+
+		</div>
+	</div>
+
+
+
+
+	<%-- <c:forEach var="beer" items="${beers}">
+					<c:if test="${not empty beer}">
+						<div class="col-lg-4 col-md-6 mb-4">
+							<div class="card h-100">
+								<h2 class="text-center">Beer Recipe</h2>
+								<img src="${beer.imgUrl }" class="card-img-top"
+									alt="beer glass in hand">
+								<div class="card-body text-center">
+									<a href="getBeerById.do?id=${beer.id}">
+										<h2 class="post-title">${beer.beerName}</h2>
+										<p class="card-text">${beer.updatedAt}</p>
+									</a>
+									<p class="card-text">${beer.beerType}</p>
+									<p class="card-text">${beer.yeast}</p>
+									<div class="card-footer">
+										<small class="text-muted">&#9733; &#9733; &#9733;
+											&#9733; &#9734;</small>
+									</div>
+								</div>
+							</div>
+						</div>
+					</c:if>
+				</c:forEach> --%>
 
 
 	<%@ include file="footer.jsp"%>
