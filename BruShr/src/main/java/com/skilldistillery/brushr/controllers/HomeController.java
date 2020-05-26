@@ -125,8 +125,10 @@ public class HomeController {
 	}
 	
 	/////// deleteBeer/////////////
+
 	@RequestMapping(path="deleteBeer.do")
 	public String deleteBeer(@RequestParam(name= "id") Integer id, User user, HttpSession session, Model model) {
+
 		BeerRecipe b = beerDAO.getBeerById(id);
 		User loggedInUser = (User) session.getAttribute("user");
 //		
