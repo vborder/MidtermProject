@@ -2,6 +2,8 @@
 	url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap')
 	;
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
+
 body {
 	margin: 0;
 	padding-top: 100px; font-family : 'Cinzel', serif;
@@ -36,4 +38,12 @@ textarea {
 #center 
 {
 	text-align: center;
+}
+
+.carousel-inner img
+{
+	height:55em;
+	width:100%;
+
+
 }
