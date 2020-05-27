@@ -8,18 +8,21 @@
 <meta charset="UTF-8">
 <title>Login</title>
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	href=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+	crossorigin="anonymous"></script>
 <link
 	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap"
 	rel="stylesheet">
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap')
+	;
+</style>
 <link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
-<!-- <style>
-body {
-	background-color: red
-}
-</style> -->
+
 </head>
 <body class="bg-light">
 
