@@ -157,5 +157,10 @@ public class HomeController {
 		beerDAO.createComment(id, comment, user);
 		return getBeerById(id, model);
   }
+	
+	@RequestMapping(path="about.do")
+	public String goToAboutPage() {
+		return "about";
+	}
 
 }
