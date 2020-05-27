@@ -49,8 +49,8 @@
 							<!--Title-->
 							<h4 class="card-title text-center"><a href="https://www.linkedin.com/in/thompsondarin/" target="_blank">Darin Thompson</a></h4>
 							<!--Text-->
-							<p class="card-text">Java Software Developer.<br>Trello board owner.</p>
-							
+							<p class="card-text">Java Software Developer.</p>
+							<p class="card-text">Beer Enthusiast and Decent Dungeon Master.</p>
 						</div>
 
 					</div>
@@ -89,7 +89,7 @@
 						<!--Card content-->
 						<div class="card-body">
 							<!--Title-->
-							<h4 class="card-title text-center"><a href="https://www.linkedin.com/in/vincent-borden/" target="_blank">Vincent Border</a></h4>
+							<h4 class="card-title text-center"><a href="https://www.linkedin.com/in/vincent-borden/" target="_blank">Vincent Borden</a></h4>
 							<!--Text-->
 							<p class="card-text">Java Software Developer. </p>
 							<p class="card-text">Repository owner. </p>
