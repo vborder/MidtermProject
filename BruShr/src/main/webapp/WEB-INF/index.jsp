@@ -30,10 +30,12 @@
 	<!-- Page Content -->
 	<div class="container-fluid">
 		<div class="container">
-			<!--SEARCH  -->
-			<form class = "text-center" action="search.do" method="GET">
-				<input type="text" name="search" placeholder="search beers" /> <input
-					type="submit" class="btn btn-small" value="SEARCH" />
+
+			<form action="search.do" method="GET">
+				<input type="text"  name="search"
+					placeholder="search beers" /> <input type="submit"
+					class="btn btn-small" value="SEARCH" />
+
 			</form>
 			<!-- CAROUSEL -->
 			<!-- <div class="container"> -->
