@@ -8,16 +8,23 @@
 <title>Insert title here</title>
 
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	href=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
 <link
 	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap"
 	rel="stylesheet">
+<style>
+@import
+	url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap')
+	;
+</style>
 <link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+	crossorigin="anonymous"></script>
 </head>
 <body>
-
+	<%@ include file="navbar.jsp"%>
 
 	<%-- <p>${user.loginName}</p>
 <p>${user.first_name}</p>
@@ -30,9 +37,9 @@
 			<div class="list-group list-group-flush mt-5">
 
 				<div id="textbox" class=" border-bottom border-dark">
-					<p class="alignleft">USERNAME: </p>
+					<p class="alignleft">USERNAME:</p>
 					<p class="alignright">${user.loginName}</p>
-				
+
 				</div>
 				<div id="textbox" class=" border-bottom border-dark">
 					<p class="alignleft">FIRST NAME</p>
@@ -57,7 +64,7 @@
 		class="text-center btn btn-primary btn-lg btn-block mb-5 mt-5"
 		role="button">Go To See All The Beer Recipes</a>
 
-
+<%@ include file="footer.jsp"%> 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>

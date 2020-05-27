@@ -16,19 +16,14 @@
 <link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 
 <style>
-/* body {
-	background-color: red;
-	color: #ff69b4;
-	font-weight: 900;
-	font-size: 5em;
-} */
+
 </style>
 </head>
 
 <body>
 
   <%@ include file="navbar.jsp"%> 
-	<h1 class="text-center bg-danger mt-5 mb-5">This is where you create a userAccount</h1>
+	<h1 class="text-center bg-danger p-3 mb-5">This is where you create an User Account</h1>
 
 	<div class="container-fluid text-center col-lg-8 align-self-baseline pb-5 pt-3 bg-info">
 		<div class="contain">
