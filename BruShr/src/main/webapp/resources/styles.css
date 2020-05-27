@@ -60,6 +60,6 @@ box-shadow: 5px 10px #9f9f9f;
     object-fit: cover;
 }
 
-input[type=text] {
+#searchbar {
    width: 600px;
 }
