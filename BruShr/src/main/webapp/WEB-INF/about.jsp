@@ -17,7 +17,7 @@
 	crossorigin="anonymous"></script>
 	<link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 </head>
-<body>
+<body >
 <%@ include file="navbar.jsp"%>
 <br>
 	<br>
@@ -37,7 +37,7 @@
 			<div class="row">
 				<div class="col-sm-12 col-md-6 col-lg-3">
 					<!--Card-->
-					<div class="card hoverable">
+					<div class="card hoverable trans">
 
 						<!--Card image-->
 						<img class="card-img-top"
@@ -56,7 +56,7 @@
 					</div>
 					<!--/.Card-->
 				</div>
-				<div class="col-sm-12 col-md-6 col-lg-3">
+				<div class="col-sm-12 col-md-6 col-lg-3 d-flex align-items-stretch">
 					<!--Card-->
 					<div class="card hoverable">
 
@@ -77,7 +77,7 @@
 					</div>
 					<!--/.Card-->
 				</div>
-				<div class="col-sm-12 col-md-6 col-lg-3">
+				<div class="col-sm-12 col-md-6 col-lg-3 d-flex align-items-stretch">
 					<!--Card-->
 					<div class="card hoverable">
 
@@ -98,7 +98,7 @@
 					</div>
 					<!--/.Card-->
 				</div>
-				<div class="col-sm-12 col-md-6 col-lg-3">
+				<div class="col-sm-12 col-md-6 col-lg-3 d-flex align-items-stretch">
 					<!--Card-->
 					<div class="card hoverable">
 
