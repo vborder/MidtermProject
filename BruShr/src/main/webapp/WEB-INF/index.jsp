@@ -10,13 +10,16 @@
 	href=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
-<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+	crossorigin="anonymous"></script>
+<link
+	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap"
+	rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 </head>
 <body>
 	<!-- Navigation -->
-	   <%@ include file="navbar.jsp"%> 
+	<%@ include file="navbar.jsp"%>
 	<%-- <p>${sessionScope.user}</p>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 		<div class="container">
@@ -65,6 +68,11 @@
 	<!-- Page Content -->
 	<div class="container-fluid">
 		<div class="container">
+			<form action="search.do" method="GET">
+				<input type="text"  name="search"
+					placeholder="search beers" /> <input type="subut"
+					class="btn btn-small" value="SEARCH" />
+			</form>
 			<div id="carouselExampleIndicators" class="carousel slide my-4"
 				data-ride="carousel">
 				<ol class="carousel-indicators">
@@ -133,10 +141,10 @@
 			</div>
 		</div>
 	</div>
-	
-      
-   <%@ include file="footer.jsp"%>   
-      
+
+
+	<%@ include file="footer.jsp"%>
+
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin="anonymous"></script>
