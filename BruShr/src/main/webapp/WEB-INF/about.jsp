@@ -7,16 +7,33 @@
 <meta charset="UTF-8">
 <title>BrüShr | Developers</title>
 <link rel="stylesheet"
-	href=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="resources/styles.css" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap"
+	rel="stylesheet">
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+	crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 </head>
 <body>
+<%@ include file="navbar.jsp"%>
+<br>
+	<br>
 <div class="container-fluid">
 <div class="container">
-	<section>
+	<!-- Portfolio Section-->
+	<section class="page-section portfolio" id="portfolio">
 		<div class="container">
+			<!-- Portfolio Section Heading-->
+			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><a href="index.do">BrüShr</a></h2>
+			<!-- Icon Divider-->
+			<div class="divider-custom">
+				<div class="divider-custom-line"></div>
+				
+				<div class="divider-custom-line"></div>
+			</div>
 			<div class="row">
 				<div class="col-sm-12 col-md-6 col-lg-3">
 					<!--Card-->
@@ -24,13 +41,13 @@
 
 						<!--Card image-->
 						<img class="img-fluid"
-							src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg"
-							alt="Card image cap">
+							src="https://images.unsplash.com/photo-1438557068880-c5f474830377?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80"
+							alt="cheers">
 
 						<!--Card content-->
 						<div class="card-body">
 							<!--Title-->
-							<h4 class="card-title">Indonectetus facilis</h4>
+							<h4 class="card-title"><a href="" target="_blank">Darin Thompson</a></h4>
 							<!--Text-->
 							<p class="card-text">Dignissimmorbi rhoncus sed netus ligula
 								conseque netus nulla aliquat id dui fermentumnec.</p>
@@ -45,13 +62,13 @@
 
 						<!--Card image-->
 						<img
-							src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%287%29.jpg"
-							class="img-fluid" alt="">
+							src="https://images.unsplash.com/photo-1495399396117-a3763646f854?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+							class="img-fluid" alt="cheers">
 
 						<!--Card content-->
 						<div class="card-body">
 							<!--Title-->
-							<h4 class="card-title">Indonectetus facilis</h4>
+							<h4 class="card-title text-center"><a href="" target="_blank">Michael Degginger</a></h4>
 							<!--Text-->
 							<p class="card-text">Dignissimmorbi rhoncus sed netus ligula
 								conseque netus nulla aliquat id dui fermentumnec.</p>
@@ -66,13 +83,13 @@
 
 						<!--Card image-->
 						<img
-							src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20%283%29.jpg"
-							class="img-fluid">
+							src="https://images.unsplash.com/photo-1580397581145-cdb6a35b7d3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1188&q=80"
+							class="img-fluid" alt="cheers">
 
 						<!--Card content-->
 						<div class="card-body">
 							<!--Title-->
-							<h4 class="card-title">Indonectetus facilis</h4>
+							<h4 class="card-title text-center"><a href="" target="_blank">Vincent Borden</a></h4>
 							<!--Text-->
 							<p class="card-text">Dignissimmorbi rhoncus sed netus ligula
 								conseque netus nulla aliquat id dui fermentumnec.</p>
@@ -87,16 +104,15 @@
 
 						<!--Card image-->
 						<img
-							src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(147).jpg"
-							class="img-fluid" alt="">
+							src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+							class="img-fluid" alt="cheers">
 
 						<!--Card content-->
 						<div class="card-body">
 							<!--Title-->
-							<h4 class="card-title">Indonectetus facilis</h4>
+							<h4 class="card-title text-center"><a href="https://www.linkedin.com/in/yettsy-jo-knapp/" target="_blank">Yettsy Knapp</a></h4>
 							<!--Text-->
-							<p class="card-text">Dignissimmorbi rhoncus sed netus ligula
-								conseque netus nulla aliquat id dui fermentumnec.</p>
+							<p class="card-text">Java Software Developer.</p>
 						</div>
 
 					</div>

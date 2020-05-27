@@ -7,10 +7,15 @@
 <meta charset="UTF-8">
 <title>BrüShr | Invalid Request</title>
 <link rel="stylesheet"
-	href=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-<link rel="stylesheet" href="resources/styles.css" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap"
+	rel="stylesheet">
+<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
+	crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
