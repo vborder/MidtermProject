@@ -31,10 +31,10 @@
 	<div class="container-fluid">
 		<div class="container">
 
-			<form action="search.do" method="GET">
-				<input type="text"  name="search"
-					placeholder="search beers" /> <input type="submit"
-					class="btn btn-small" value="SEARCH" />
+			<form action="search.do" class="text-center" method="GET">
+				<input type="text"  name="search" class=" cardshadow text-center bg-light"
+					placeholder="search your beers here" /> <input type="submit"
+					class="btn btn-info border border-dark rounded-0" value="S U B M I T" />
 
 			</form>
 			<!-- CAROUSEL -->
@@ -47,27 +47,45 @@
 						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
 						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
 						<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
 					</ol>
 					<div class="carousel-inner" role="listbox">
 						<div class="carousel-item active">
 							<img class="d-block img-fluid"
-								src="https://images.unsplash.com/photo-1523567830207-96731740fa71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60"
+								src="resources/media/beer1.jpg"
 								alt="First slide">
 						</div>
 						<div class="carousel-item">
 							<img class="d-block img-fluid"
-								src="https://images.unsplash.com/photo-1471421298428-1513ab720a8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60"
+								src="resources/media/beer2.jpg"
 								alt="Second slide">
 						</div>
 						<div class="carousel-item">
 							<img class="d-block img-fluid"
-								src="https://images.unsplash.com/photo-1575367439058-6096bb9cf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60"
+								src="resources/media/beer3.jpg"
 								alt="Third slide">
 						</div>
 						<div class="carousel-item">
 							<img class="d-block img-fluid"
-								src="https://images.unsplash.com/photo-1558642891-54be180ea339?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60"
+								src="resources/media/beer4.jpg"
 								alt="Fourth slide">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block img-fluid"
+								src="resources/media/beer5.jpg"
+								alt="Fifth slide">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block img-fluid"
+								src="resources/media/beer6.jpg"
+								alt="Sixth slide">
+						</div>
+						<div class="carousel-item">
+							<img class="d-block img-fluid"
+								src="resources/media/beer7.jpg"
+								alt="Seventh slide">
 						</div>
 					</div>
 					<a class="carousel-control-prev" href="#carouselExampleIndicators"
@@ -85,21 +103,21 @@
 				<c:forEach var="beer" items="${beers}">
 					<c:if test="${not empty beer and beer.enabled == true}">
 						<div class="col-lg-4 col-md-6 mb-4">
-							<div class="card h-100">
-								<h2 class="text-center">Beer Recipe</h2>
+							<div class="card h-100 cardshadow">
+								<!-- <h2 class="text-center">Beer Recipe</h2> -->
 								<img src="${beer.imgUrl }" class="card-img-top"
 									alt="beer glass in hand">
 								<div class="card-body text-center">
 									<a href="getBeerById.do?id=${beer.id}">
-										<h2 class="post-title">${beer.beerName}</h2>
+										<h2 class="post-title alert alert-secondary">${beer.beerName}</h2>
 										<p class="card-text">${beer.updatedAt}</p>
 									</a>
 									<p class="card-text">${beer.beerType}</p>
-									<p class="card-text">${beer.yeast}</p>
-									<div class="card-footer">
+									<%-- <p class="card-text">${beer.yeast}</p> --%>
+									<!-- <div class="card-footer pt-5 mt-5">
 										<small class="text-muted">&#9733; &#9733; &#9733;
 											&#9733; &#9734;</small>
-									</div>
+									</div> -->
 								</div>
 							</div>
 						</div>
