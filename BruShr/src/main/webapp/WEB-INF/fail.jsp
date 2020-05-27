@@ -17,11 +17,12 @@
 	<br>
 	<br>
 	<!-- Masthead-->
+	<div class="container-fluid">
 	<header class="masthead bg-primary text-white text-center">
 		<div class="container d-flex align-items-center flex-column">
 			<!-- Masthead Avatar Image-->
-			<img class="masthead-avatar mb-5" src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-				alt="zoomed in image of beer glass" />
+			<img class="masthead-avatar mb-5" src="https://images.unsplash.com/photo-1511963118349-e2b22c0efcfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
+				alt="CRAFT spelled out in lights" style="height: 100px; width: 100px;" />
 			<!-- Masthead Heading-->
 			<h1 class="masthead-heading text-uppercase mb-0">Invalid Request</h1>
 			<!-- Icon Divider-->
@@ -38,6 +39,7 @@
 		<h2><a class="text-white" href="about.do">Software Developers</a></h2>
 		</div>
 	</header>
+	
 	<!-- Portfolio Section-->
 	<section class="page-section portfolio" id="portfolio">
 		<div class="container">
@@ -82,7 +84,7 @@
                     </div>
                     </div>
          </section>
-
+		</div>
 				<%@ include file="footer.jsp"%>
 
 
