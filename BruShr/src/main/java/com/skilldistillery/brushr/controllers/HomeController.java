@@ -88,6 +88,13 @@ public class HomeController {
 		}
 		return "index";
 	}
+	
+	@RequestMapping(path="search.do")
+	public String getBeersBySearch(@RequestParam(name="search")String search, Model model) {
+		List<BeerRecipe> beers = beerDAO.getBeersByNameOrDescription(search);
+		model.addAttribute("beers", beers);
+		return "index";
+	}
 
 	//////// Search beerById////////////
 	@RequestMapping(path = "getBeerById.do", method = RequestMethod.GET)
