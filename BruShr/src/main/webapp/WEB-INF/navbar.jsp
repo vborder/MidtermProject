@@ -37,7 +37,7 @@
 						<c:when test="${sessionScope.user != null }">
 								<a class="nav-link" href="addBeer.do">Add
 										Beer Recipe |</a>
-								<a class="text-white" href="updateProfile.do">Update ${sessionScope.user.loginName} |</a>
+								<a class="text-white" href="updateProfile.do?userName=${sessionScope.user.loginName}">Update ${sessionScope.user.loginName} |</a>
 								<a class="text-white" href="logout.do">${sessionScope.user.loginName} Sign Out |</a>
 							
 						</c:when>
