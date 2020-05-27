@@ -32,7 +32,7 @@
 
 	<div class="container-fluid text-center col-lg-8 align-self-baseline pb-5 pt-3 bg-info">
 		<div class="contain">
-			<form action="createBeer.do" method="POST">
+			<form action="createAccount.do" method="POST">
 						<div class="form-group">
 							<label class="text-white-75 font-weight-light"
 								for="exampleFormControlTextarea1">First Name</label> <input
