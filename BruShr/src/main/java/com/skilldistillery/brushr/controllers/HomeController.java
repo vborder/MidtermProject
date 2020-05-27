@@ -124,12 +124,18 @@ public class HomeController {
 	}
 
 	@RequestMapping(path = "updateBeer.do", method = RequestMethod.POST)
-	public String updateBeerItem(@RequestParam(name = "id") int id, Model model) {
-
-		BeerRecipe beer = beerDAO.getBeerById(id);
-		model.addAttribute("beer", beer);
+	public String updateBeerItem(@RequestParam(name = "id") int id, BeerRecipe beer, Model model) {
+//		BeerRecipe beer = beerDAO.getBeerById(id);
+		beerDAO.updateBeer(id, beer);
+//		model.addAttribute("beer", beer);
 		return "success";
 	}
+	
+//	BeerRecipe beerRecipe, HttpSession session, Model model) {
+//
+//		BeerRecipe beer = beerDAO.createBeer(beerRecipe, (User) session.getAttribute("user"));
+//
+//		model.addAttribute("beer", beer);
 	
 	/////// deleteBeer/////////////
 

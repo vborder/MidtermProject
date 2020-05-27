@@ -83,10 +83,9 @@
 									<textarea class="form-control" type="text" placeholder="Enter Description" 
 									name="description" rows="6" columns="140" autocomplete="off"></textarea>
 								</div>
-									<br> <input type="hidden" name="user_id"
-										value="${sessionScope.user.id}">
-									<button type="submit" class="btn btn-success text-center">Add
-										Beer Recipe</button>
+									<br> <input type="hidden" name="user_id" value="${sessionScope.user.id}">
+										<input type="hidden" name="beerId" value="${beer.id}"></input>
+									<button type="submit" class="btn btn-success text-center">Create</button>
 							</fieldset>
 					</div>
 				</div>
