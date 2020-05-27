@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Success</title>
+<title>BrüShr | Invalid Request</title>
 <link rel="stylesheet"
 	href=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
@@ -18,13 +18,15 @@
 	<br>
 	<!-- Masthead-->
 	<div class="container-fluid">
-	<header class="masthead bg-primary text-white text-center">
+	<!-- Masthead Heading-->
+			
+	<header class="masthead bg text-dark text-center">
+	<h1 class="masthead-heading text-uppercase mb-0 text-center">Invalid Request</h1>
 		<div class="container d-flex align-items-center flex-column">
 			<!-- Masthead Avatar Image-->
-			<img class="masthead-avatar mb-5" src="https://images.unsplash.com/photo-1511963118349-e2b22c0efcfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60"
-				alt="CRAFT spelled out in lights" style="height: 100px; width: 100px;" />
-			<!-- Masthead Heading-->
-			<h1 class="masthead-heading text-uppercase mb-0">Invalid Request</h1>
+			<img class="masthead-avatar mb-5" src="https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+				alt="Green broken bottle glass" style="height: 300px; width: 300px;" />
+			
 			<!-- Icon Divider-->
 			<div class="divider-custom divider-light">
 				<div class="divider-custom-line"></div>
@@ -34,9 +36,9 @@
 				<div class="divider-custom-line"></div>
 			</div>
 			<!-- Masthead Subheading-->
-		<h2><a class="text-white" href="index.do">Home Page</a></h2>
+		<h2><a class="text-dark" href="index.do">Home Page</a></h2>
 		<br>
-		<h2><a class="text-white" href="about.do">Software Developers</a></h2>
+		<h2><a class="text-dark" href="about.do">Software Developers</a></h2>
 		</div>
 	</header>
 	
@@ -44,7 +46,7 @@
 	<section class="page-section portfolio" id="portfolio">
 		<div class="container">
 			<!-- Portfolio Section Heading-->
-			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">BrüShr</h2>
+			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><a href="index.do">BrüShr</a></h2>
 			<!-- Icon Divider-->
 			<div class="divider-custom">
 				<div class="divider-custom-line"></div>
@@ -61,7 +63,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="" />
+                            <img class="img-fluid" src="https://images.unsplash.com/photo-1557944941-12f56fa6e20b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="picnic with food and beer" />
                         </div>
                     </div>
                     <!-- Portfolio Item 2-->
@@ -70,7 +72,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="" />
+                            <img class="img-fluid" src="https://images.unsplash.com/photo-1511963118349-e2b22c0efcfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="craft letters sign in lights" />
                         </div>
                     </div>
                     <!-- Portfolio Item 3-->
@@ -79,7 +81,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="" />
+                            <img class="img-fluid" src="https://images.unsplash.com/photo-1474314005122-3c07c4df1224?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="home brewed beer, a stout" />
                         </div>
                     </div>
                     </div>

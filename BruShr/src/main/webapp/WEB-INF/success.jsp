@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Success</title>
+<title>BrüShr | Success</title>
 <link rel="stylesheet"
 	href=" https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
@@ -18,13 +18,15 @@
 	<br> 
 	<!-- Masthead-->
 	<div class="container-fluid">
-	<header class="masthead bg-primary text-white text-center">
+	<!-- Masthead Heading-->
+			
+	<header class="masthead bg text-dark text-center">
+	<h1 class="masthead-heading text-uppercase mb-0 text-center">Successful Request</h1>
 		<div class="container d-flex align-items-center flex-column">
 			<!-- Masthead Avatar Image-->
-			<img class="masthead-avatar mb-5 img-fluid" src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-				alt="zoomed in image of beer glass" />
-			<!-- Masthead Heading-->
-			<h1 class="masthead-heading text-uppercase mb-0">You have successfully removed the beer recipe</h1>
+			<img class="masthead-avatar mb-5" src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+				alt="zoomed in image of beer glass" style="height: 300px; width: 300px;"/>
+			
 			<!-- Icon Divider-->
 			<div class="divider-custom divider-light">
 				<div class="divider-custom-line"></div>
@@ -34,16 +36,16 @@
 				<div class="divider-custom-line"></div>
 			</div>
 			<!-- Masthead Subheading-->
-		<h2><a class="text-white" href="index.do">Home Page</a></h2>
+		<h2><a class="text-dark" href="index.do">Home Page</a></h2>
 		<br>
-		<h2><a class="text-white" href="about.do">Software Developers</a></h2>
+		<h2><a class="text-dark" href="about.do">Software Developers</a></h2>
 		</div>
 	</header>
 	<!-- Portfolio Section-->
 	<section class="page-section portfolio" id="portfolio">
 		<div class="container">
 			<!-- Portfolio Section Heading-->
-			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">BrüShr</h2>
+			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><a href="index.do">BrüShr</a></h2>
 			<!-- Icon Divider-->
 			<div class="divider-custom">
 				<div class="divider-custom-line"></div>
@@ -60,7 +62,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="https://images.unsplash.com/photo-1457382713369-161d1d986f54?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" alt="image of glass from top with foam" />
+                            <img class="img-fluid" src="https://images.unsplash.com/photo-1571947221289-ed32f8faad61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="glass of beer with beer bottles behind" style="height: 250px; width: 250px;"/>
                         </div>
                     </div>
                     <!-- Portfolio Item 2-->
@@ -85,12 +87,6 @@
          </section>
 	</div>
 				<%@ include file="footer.jsp"%>
-
-
-
-
-
-
 
 				<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 					integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
