@@ -24,7 +24,7 @@
 					id="collapsibleNavbar">
 					<ul class="navbar-nav ml-auto">
 						<c:if test="${sessionScope.user == null}">
-							<li><a class="btn btn-primary" href="login.do">Sign In</a></li>
+							
 							<li><a class="btn btn-success" href="createAccount.do">Create
 									Account</a></li>
 							<li class="nav-item active"><a class="nav-link"
@@ -52,9 +52,6 @@
 						</c:otherwise>
 					</c:choose>
 					
-						
-						<a class="nav-link"
-							href="BeersByNameOrDescription.do"> Search Beer Recipe |</a>
 						<a class="nav-link"
 							href="about.do"> ABOUT</a>
 					

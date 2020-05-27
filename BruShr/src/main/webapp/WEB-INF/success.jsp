@@ -35,9 +35,7 @@
 			<!-- Icon Divider-->
 			<div class="divider-custom divider-light">
 				<div class="divider-custom-line"></div>
-				<div class="divider-custom-icon">
-					<i class="fas fa-star"></i>
-				</div>
+				
 				<div class="divider-custom-line"></div>
 			</div>
 			<!-- Masthead Subheading-->
@@ -54,9 +52,7 @@
 			<!-- Icon Divider-->
 			<div class="divider-custom">
 				<div class="divider-custom-line"></div>
-				<div class="divider-custom-icon">
-					<i class="fas fa-star"></i>
-				</div>
+				
 				<div class="divider-custom-line"></div>
 			</div>
 			<!-- Portfolio Grid Items-->
@@ -67,7 +63,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="https://images.unsplash.com/photo-1571947221289-ed32f8faad61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="glass of beer with beer bottles behind" style="height: 250px; width: 250px;"/>
+                            <img class="img-fluid" src="https://images.unsplash.com/photo-1571947221289-ed32f8faad61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="glass of beer with beer bottles behind" />
                         </div>
                     </div>
                     <!-- Portfolio Item 2-->
