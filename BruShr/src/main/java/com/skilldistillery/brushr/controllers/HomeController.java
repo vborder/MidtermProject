@@ -124,13 +124,11 @@ public class HomeController {
 	}
 
 	@RequestMapping(path = "updateBeer.do", method = RequestMethod.POST)
-	public String updateBeerItem(@RequestParam(name = "id") int id, Model model) {
-
-		BeerRecipe beer = beerDAO.getBeerById(id);
-		model.addAttribute("beer", beer);
+	public String updateBeerItem(@RequestParam(name = "id") int id, BeerRecipe beer, Model model) {
+		beerDAO.updateBeer(id, beer);
 		return "success";
 	}
-	
+
 	/////// deleteBeer/////////////
 
 	@RequestMapping(path="deleteBeer.do")
@@ -138,9 +136,8 @@ public class HomeController {
 
 		BeerRecipe b = beerDAO.getBeerById(id);
 		User loggedInUser = (User) session.getAttribute("user");
-//		
 		boolean beerDelete = beerDAO.deleteBeer(id, loggedInUser);
-		System.out.println(id + "" + user);
+		
 		if (beerDelete) {
 			return "success";
 		}
@@ -156,7 +153,7 @@ public class HomeController {
 		model.addAttribute(b);
 		beerDAO.createComment(id, comment, user);
 		return getBeerById(id, model);
-  }
+	}
 	
 	@RequestMapping(path="about.do")
 	public String goToAboutPage() {

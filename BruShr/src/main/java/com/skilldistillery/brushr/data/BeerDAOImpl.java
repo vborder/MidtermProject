@@ -82,7 +82,7 @@ public class BeerDAOImpl implements BeerDAO{
 		b.setBeerType(beer.getBeerType());
 		b.setYeast(beer.getYeast());
 		b.setDescription(beer.getDescription());
-		b.setEnabled(beer.getEnabled());
+		b.setEnabled(true);
 		b.setCreatedAt(beer.getCreatedAt());
 		b.setUpdatedAt(beer.getUpdatedAt());
 		b.setImgUrl(beer.getImgUrl());
