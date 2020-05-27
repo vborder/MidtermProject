@@ -32,7 +32,7 @@
 		<div class="container">
 
 			<form action="search.do" class="text-center" method="GET">
-				<input type="text"  name="search" class=" cardshadow text-center bg-light"
+				<input type="text"  id = "searchbar"   name="search" class="mr-3 cardshadow text-center bg-light"
 					placeholder="search your beers here" /> <input type="submit"
 					class="btn btn-info border border-dark rounded-0" value="S U B M I T" />
 
