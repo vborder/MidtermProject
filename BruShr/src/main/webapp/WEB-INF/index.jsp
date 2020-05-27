@@ -30,10 +30,12 @@
 	<!-- Page Content -->
 	<div class="container-fluid">
 		<div class="container">
-			<!--SEARCH  -->
-			<form class = "text-center" action="search.do" method="GET">
-				<input type="text" name="search" placeholder="search beers" /> <input
-					type="submit" class="btn btn-small" value="SEARCH" />
+
+			<form action="search.do" method="GET">
+				<input type="text"  name="search"
+					placeholder="search beers" /> <input type="submit"
+					class="btn btn-small" value="SEARCH" />
+
 			</form>
 			<!-- CAROUSEL -->
 			<!-- <div class="container"> -->
@@ -49,22 +51,22 @@
 					<div class="carousel-inner" role="listbox">
 						<div class="carousel-item active">
 							<img class="d-block img-fluid"
-								src="https://images.unsplash.com/photo-1523567830207-96731740fa71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60"
+								src="resources/media/beer1.jpg"
 								alt="First slide">
 						</div>
 						<div class="carousel-item">
 							<img class="d-block img-fluid"
-								src="https://images.unsplash.com/photo-1471421298428-1513ab720a8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60"
+								src="resources/media/beer2.jpg"
 								alt="Second slide">
 						</div>
 						<div class="carousel-item">
 							<img class="d-block img-fluid"
-								src="https://images.unsplash.com/photo-1575367439058-6096bb9cf5e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60"
+								src="resources/media/beer3.jpg"
 								alt="Third slide">
 						</div>
 						<div class="carousel-item">
 							<img class="d-block img-fluid"
-								src="https://images.unsplash.com/photo-1558642891-54be180ea339?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1296&q=60"
+								src="resources/media/beer4.jpg"
 								alt="Fourth slide">
 						</div>
 					</div>
@@ -84,7 +86,7 @@
 					<c:if test="${not empty beer and beer.enabled == true}">
 						<div class="col-lg-4 col-md-6 mb-4">
 							<div class="card h-100">
-								<h2 class="text-center">Beer Recipe</h2>
+								<!-- <h2 class="text-center">Beer Recipe</h2> -->
 								<img src="${beer.imgUrl }" class="card-img-top"
 									alt="beer glass in hand">
 								<div class="card-body text-center">
