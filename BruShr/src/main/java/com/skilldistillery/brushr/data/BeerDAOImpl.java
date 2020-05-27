@@ -49,10 +49,10 @@ public class BeerDAOImpl implements BeerDAO{
 	}
 
 	@Override
-	public List<BeerRecipe> getBeersByNameOrDescription(String style) {
-		String jpql = "SELECT b from BeerRecipe WHERE b.name LIKE :style AND b.enabled = true";
+	public List<BeerRecipe> getBeersByNameOrDescription(String search) {
+		String jpql = "SELECT b from BeerRecipe b WHERE b.beerName LIKE :beerName AND b.enabled = true";
 		List<BeerRecipe> recipes = em.createQuery(jpql, BeerRecipe.class)
-				.setParameter("style", "%"+ style+ "%").getResultList();
+				.setParameter("beerName", "%"+ search+ "%").getResultList();
 		return recipes;
 	}
 

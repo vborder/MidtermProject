@@ -70,7 +70,7 @@
 		<div class="container">
 			<form action="search.do" method="GET">
 				<input type="text"  name="search"
-					placeholder="search beers" /> <input type="subut"
+					placeholder="search beers" /> <input type="submit"
 					class="btn btn-small" value="SEARCH" />
 			</form>
 			<div id="carouselExampleIndicators" class="carousel slide my-4"
