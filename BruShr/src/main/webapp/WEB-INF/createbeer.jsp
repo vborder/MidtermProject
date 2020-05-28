@@ -16,15 +16,13 @@
 	<link rel="stylesheet" type="text/css" href="resources/styles.css" />
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
 	crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
-	<hr>
-	<br>
 	<div class="container-fluid">
 		<div class="container altfont">
 			<div class="col-md-8 offset-md-3 mx-auto">
-				<!-- 	<div class="col-md-6"> -->
 				<div class="card card-outline-secondary">
 					<div class="card-body">
 						<h5 class="text-center">Add Beer Recipe</h5>
