@@ -54,7 +54,8 @@
 								<div class="form group">
 									<label for="beer type">Beer type: (Previously selected: ${beer.beerType})</label>
 									<select multiple class="form-control" id="beer type" value="${beer.beerType}" name="beerType">
-										<option selected>Brown Ale</option>
+										<option selected>${beer.beerType}</option>
+										<option>Brown Ale</option>
 										<option>Belgian-Style Ale</option>
 										<option>Dark Lager</option>
 										<option>German Bock</option>
@@ -73,7 +74,8 @@
 									<label for="yeast">Yeast: (Previously selected: ${beer.yeast})</label>
 									<select class="form-control" id="yeast" value="${beer.yeast}" name="yeast">
 										<!-- 	<option selected>Choose one of the following types</option> -->
-										<option selected>Ale</option>
+										<option selected>${beer.yeast}</option>
+										<option>Ale</option>
 										<option>Lager</option>
 									</select>
 									</div>
