@@ -9,7 +9,7 @@
 </head>
 <body>
 	<!-- Navigation -->
-	
+
 	<header>
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 			<div class="container">
@@ -24,7 +24,7 @@
 					id="collapsibleNavbar">
 					<ul class="navbar-nav ml-auto">
 						<c:if test="${sessionScope.user == null}">
-							
+
 							<li><a class="btn btn-success" href="createAccount.do">Create
 									Account</a></li>
 							<li class="nav-item active"><a class="nav-link"
@@ -35,11 +35,16 @@
 
 					<c:choose>
 						<c:when test="${sessionScope.user != null }">
-								<a class="nav-link" href="addBeer.do">Add
-										Beer Recipe |</a>
-								<a class="text-white" href="updateProfile.do?userName=${sessionScope.user.loginName}">Update ${sessionScope.user.loginName} |</a>
-								<a class="text-white" href="logout.do">${sessionScope.user.loginName} Sign Out |</a>
-							
+							<a class="nav-link" href="addBeer.do">Add Beer Recipe |</a>
+							<a class="text-white"
+								href="profile.do?userName=${sessionScope.user.loginName}">Profile
+								${sessionScope.user.loginName} |</a>
+							<a class="text-white"
+								href="updateProfile.do?userName=${sessionScope.user.loginName}">Update
+								${sessionScope.user.loginName} |</a>
+							<a class="text-white" href="logout.do">${sessionScope.user.loginName}
+								Sign Out |</a>
+
 						</c:when>
 
 
@@ -51,10 +56,9 @@
 							</ul>
 						</c:otherwise>
 					</c:choose>
-					
-						<a class="nav-link"
-							href="about.do"> ABOUT</a>
-					
+
+					<a class="nav-link" href="about.do"> ABOUT</a>
+
 				</div>
 			</div>
 
