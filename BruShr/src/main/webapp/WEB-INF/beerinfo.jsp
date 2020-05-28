@@ -57,9 +57,11 @@
 			<p class="altfont text-lowercase">${beer.description}</p>
 
 			<div class="changetext mb-5">
+				<c:if test="${beer.id != null and user.id == beer.user.id}">
 				<a href="index.do" class="changetext">HOME</a> <a
 					href="updateBeer.do?id=${beer.id}" class="changetext">EDIT</a> <a
 					href="deleteBeer.do?id=${beer.id}" class="changetext">DELETE</a>
+				</c:if>
 			</div>
 		</div>
 
