@@ -15,6 +15,7 @@
 	rel="stylesheet">
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
 	crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
@@ -32,17 +33,19 @@
 								<div>
 									<!-- Beer Name -->
 									<div class="control-group">
-										<label class="control-label" for="beer name">Beer name:</label> 
-										<input type="hidden" id="id" name="id" value="${beer.id}"></input>
-											<input class="form-control" type="text" id="beer name" value="${beer.beerName}"
+										<label class="control-label" for="beer name">Beer
+											name:</label> <input type="hidden" id="id" name="id"
+											value="${beer.id}"></input> <input class="form-control"
+											type="text" id="beer name" value="${beer.beerName}"
 											name="beerName" autocomplete="off" required />
 									</div>
 								</div>
 								<br>
 								<!-- Beer Type -->
 								<div class="form group">
-									<label for="beer type">Beer type: (Previously selected: ${beer.beerType})</label>
-									<select multiple class="form-control" id="beer type" value="${beer.beerType}" name="beerType">
+									<label for="beer type">Beer type: (Previously selected:
+										${beer.beerType})</label> <select multiple class="form-control"
+										id="beer type" value="${beer.beerType}" name="beerType">
 										<option selected>${beer.beerType}</option>
 										<option>Brown Ale</option>
 										<option>Belgian-Style Ale</option>
@@ -56,44 +59,48 @@
 										<option>Wheat Beer</option>
 										<option>Wild & Sour Ale</option>
 									</select>
-									</div>
-									<br>
+								</div>
+								<br>
 								<!-- Beer Yeast -->
 								<div class="form-group">
-									<label for="yeast">Yeast: (Previously selected: ${beer.yeast})</label>
-									<select class="form-control" id="yeast" value="${beer.yeast}" name="yeast">
+									<label for="yeast">Yeast: (Previously selected:
+										${beer.yeast})</label> <select class="form-control" id="yeast"
+										value="${beer.yeast}" name="yeast">
 										<!-- 	<option selected>Choose one of the following types</option> -->
 										<option selected>${beer.yeast}</option>
 										<option>Ale</option>
 										<option>Lager</option>
 									</select>
-									</div>
+								</div>
 								<!-- Beer Description -->
 								<div class="form-group">
 									<label for="description">Description:</label>
-									<textarea class="form-control" type="text" id="description" value="${beer.description}"
-									name="description" rows="6" columns="140" autocomplete="off">${beer.description}</textarea>
+									<textarea class="form-control" type="text" id="description"
+										value="${beer.description}" name="description" rows="6"
+										columns="140" autocomplete="off">${beer.description}</textarea>
 								</div>
-									<br> <input type="hidden" name="user_id" value="${sessionScope.user.id}">
-									<button type="submit" class="btn btn-success text-center">Update</button>
-									<a button type="button" class="btn btn-secondary" href="index.do">Discard changes</a>
+								<br> <input type="hidden" name="user_id"
+									value="${sessionScope.user.id}">
+								<button type="submit" class="btn btn-success text-center">Update</button>
+								<a button type="button" class="btn btn-secondary"
+									href="index.do">Discard changes</a>
 							</fieldset>
-					</form>
+						</form>
+					</div>
 				</div>
 			</div>
-		</div>
-		<%@ include file="footer.jsp"%>
+			<%@ include file="footer.jsp"%>
 
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-			crossorigin="anonymous"></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-			crossorigin="anonymous"></script>
-		<script
-			src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-			crossorigin="anonymous"></script>
+			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+				integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+				crossorigin="anonymous"></script>
+			<script
+				src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+				integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+				crossorigin="anonymous"></script>
+			<script
+				src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+				integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+				crossorigin="anonymous"></script>
 </body>
 </html>

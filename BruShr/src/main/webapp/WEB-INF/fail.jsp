@@ -29,8 +29,8 @@
 	<h1 class="masthead-heading text-uppercase mb-0 text-center">Invalid Request</h1>
 		<div class="container d-flex align-items-center flex-column">
 			<!-- Masthead Avatar Image-->
-			<img class="masthead-avatar mb-5" src="https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
-				alt="Green broken bottle glass" style="height: 300px; width: 300px;" />
+			<img class="masthead-avatar mb-5 img-fluid" src="https://images.unsplash.com/photo-1508061501437-e1b984a4d665?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+				alt="Green broken bottle glass" />
 			
 			<!-- Icon Divider-->
 			<div class="divider-custom divider-light">
@@ -39,9 +39,10 @@
 				<div class="divider-custom-line"></div>
 			</div>
 			<!-- Masthead Subheading-->
-		<h2><a class="text-dark" href="index.do">Home Page</a></h2>
-		<br>
-		<h2><a class="text-dark" href="about.do">Software Developers</a></h2>
+		<div class="col-lg-4 mt-3">	
+		<a class="text-uppercase h2 ml-4 p-3 mb2 beerme text-dark" href="about.do">ABOUT</a>
+		</div>
+	<br>
 		</div>
 	</header>
 	
@@ -49,7 +50,7 @@
 	<section class="page-section portfolio" id="portfolio">
 		<div class="container">
 			<!-- Portfolio Section Heading-->
-			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><a href="index.do">BrüShr</a></h2>
+			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><a class="text-uppercase h2 ml-4 p-3 mb2 beerme text-dark" href="index.do">BrüShr</a></h2>
 			<!-- Icon Divider-->
 			<div class="divider-custom">
 				<div class="divider-custom-line"></div>
@@ -62,7 +63,7 @@
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white"></div>
                             </div>
                             <img class="img-fluid" src="https://images.unsplash.com/photo-1557944941-12f56fa6e20b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="picnic with food and beer" />
                         </div>
@@ -71,7 +72,7 @@
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white"></div>
                             </div>
                             <img class="img-fluid" src="https://images.unsplash.com/photo-1511963118349-e2b22c0efcfc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="craft letters sign in lights" />
                         </div>
@@ -80,7 +81,7 @@
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white"></div>
                             </div>
                             <img class="img-fluid" src="https://images.unsplash.com/photo-1474314005122-3c07c4df1224?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="home brewed beer, a stout" />
                         </div>

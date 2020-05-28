@@ -11,7 +11,7 @@ body {
 	font-family: 'Cinzel', serif;
 	background:	#f8f8ff;
 	box-sizing: border-box;
-	
+	padding-bottom: 100px;
 }
 
 
@@ -28,7 +28,7 @@ body {
 }
 
 #footer {
-	position: fixed;
+	position: fixed;/*try absolute*/
 	left: 0px;
 	bottom: 0px;
 	/* height:125px; */
