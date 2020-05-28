@@ -26,7 +26,7 @@
 	
 
 	<div class="container-fluid text-center col-lg-8 align-self-baseline pb-5 pt-3 bg-info altfont">
-		<div class="contain">
+		<div class="altfont contain">
 			<form action="createAccount.do" method="POST">
 						<div class="form-group">
 							<label class="text-white-75 font-weight-light"

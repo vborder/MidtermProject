@@ -12,14 +12,6 @@
 	crossorigin="anonymous">
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
 	crossorigin="anonymous"></script>
-<link
-	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap"
-	rel="stylesheet">
-<style>
-@import
-	url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap')
-	;
-</style>
 <link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 </head>
 <body>
@@ -41,55 +33,6 @@
 			</form>
 			<!-- CAROUSEL -->
 			<!-- <div class="container"> -->
-<<<<<<< HEAD
-				<div id="carouselExampleIndicators" class="carousel slide my-4"
-					data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#carouselExampleIndicators" data-slide-to="0"class="active"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
-					</ol>
-					<div class="carousel-inner" role="listbox">
-						<div class="carousel-item active">
-							<img class="d-block img-fluid"
-								src="resources/media/beer1.jpg"
-								alt="First slide">
-						</div>
-						<div class="carousel-item">
-							<img class="d-block img-fluid"
-								src="resources/media/beer2.jpg"
-								alt="Second slide">
-						</div>
-						<div class="carousel-item">
-							<img class="d-block img-fluid"
-								src="resources/media/beer3.jpg"
-								alt="Third slide">
-						</div>
-						<div class="carousel-item">
-							<img class="d-block img-fluid"
-								src="resources/media/beer4.jpg"
-								alt="Fourth slide">
-						</div>
-						<div class="carousel-item">
-							<img class="d-block img-fluid"
-								src="resources/media/beer5.jpg"
-								alt="Fifth slide">
-						</div>
-						<div class="carousel-item">
-							<img class="d-block img-fluid"
-								src="resources/media/beer6.jpg"
-								alt="Sixth slide">
-						</div>
-						<div class="carousel-item">
-							<img class="d-block img-fluid"
-								src="resources/media/beer7.jpg"
-								alt="Seventh slide">
-						</div>
-=======
 			<div id="carouselExampleIndicators" class="carousel slide my-4"
 				data-ride="carousel">
 				<ol class="carousel-indicators">
@@ -130,7 +73,6 @@
 					<div class="carousel-item">
 						<img class="d-block img-fluid" src="resources/media/beer7.jpg"
 							alt="Seventh slide">
->>>>>>> 73e7fbe469d8a7d8945a7387b78aca0c08a8b735
 					</div>
 				</div>
 				<a class="carousel-control-prev" href="#carouselExampleIndicators"
@@ -158,7 +100,7 @@
 									<c:otherwise> <img src="${beer.imgUrl }"
 										class="card-img-top" alt="beer glass in hand"> </c:otherwise>
 								</c:choose>
-								<div class="card-body text-center">
+								<div class="altfont card-body text-center">
 									<a href="getBeerById.do?id=${beer.id}">
 										<h2 class="post-title alert alert-secondary">${beer.beerName}</h2>
 										<p class="card-text">${beer.updatedAt}</p>
