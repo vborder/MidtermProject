@@ -105,5 +105,10 @@ public class UserController {
 		
 		return "index";
 	}	
+	
+	@RequestMapping(path="profile.do", method = RequestMethod.GET)
+	public String goToProfile(Model model, HttpSession session) {
+		return "profile";
+	}
 
 }
