@@ -71,7 +71,7 @@
 				<textarea rows="8" cols="50" name="content" placeholder="Comment"></textarea>
 				<div id="center">
 					<input type="hidden" name="beerId" value="${beer.id}"></input> <input
-						type="submit" name="submit" value="submit"
+						type="submit" name="submit" value="Submit"
 						class="text-center btn btn-danger btn-lg mt-3"></input>
 
 				</div>
