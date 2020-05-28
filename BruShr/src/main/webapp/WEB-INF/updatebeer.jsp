@@ -19,8 +19,6 @@
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>
-	<hr>
-	<br>
 	<div class="container-fluid">
 		<div class="container altfont">
 			<div class="col-md-8 offset-md-3 mx-auto">
