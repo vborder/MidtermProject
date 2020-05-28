@@ -89,9 +89,13 @@ public class UserController {
 	}
 
 	@RequestMapping(path = "logout.do", method = RequestMethod.GET)
-	public String logout(HttpSession session) {
+	public String logout(HttpSession session, Model model) {
 		session.removeAttribute("user");
 		session.removeAttribute("admin");
+		
+		List<BeerRecipe> beer = beerDAO.getAllBeers();
+		model.addAttribute("beers", beer);
+		session.getAttribute("user");
 
 		return "index";
 	}
