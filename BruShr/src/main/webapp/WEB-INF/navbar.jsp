@@ -42,8 +42,7 @@
 							<a class="text-white"
 								href="updateProfile.do?userName=${sessionScope.user.loginName}">Update
 								${sessionScope.user.loginName} |</a>
-							<a class="text-white" href="logout.do">${sessionScope.user.loginName}
-								Sign Out |</a>
+							<a class="text-white" href="logout.do">Sign Out ${sessionScope.user.loginName} |</a>
 
 						</c:when>
 
