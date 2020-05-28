@@ -13,14 +13,6 @@
 	crossorigin="anonymous">
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
 	crossorigin="anonymous"></script>
-<link
-	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap"
-	rel="stylesheet">
-<style>
-@import
-	url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap')
-	;
-</style>
 <link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 
 </head>
@@ -29,7 +21,7 @@
 <%@ include file="navbar.jsp"%>
 	<h1 class="text-center mt-5 mb-5 bg-info">BrüShr Login</h1>
 	<div class="container-fluid mt-5">
-		<div class="container mt-5">
+		<div class="container mt-5 altfont">
 			<form action="loginUser.do" method="POST">
 				<div>
 					<div class="form-row form-group ">

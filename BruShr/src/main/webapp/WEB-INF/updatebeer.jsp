@@ -21,18 +21,7 @@
 	<hr>
 	<br>
 	<div class="container-fluid">
-		<div class="container">
-			<!-- <div class="col-md-6 no-padding lib-item">
-				<div class="card card-outline-secondary">
-				<div class="lib-panel">
-					<div class="row box-shadow"> 
-						<div class="col-md-6">
-							<img class="lib-img-show"
-								src="https://images.unsplash.com/photo-1581929323509-26161538c257?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60">
-						</div>
-					</div>
-				</div>
-			</div> -->
+		<div class="container altfont">
 			<div class="col-md-8 offset-md-3 mx-auto">
 				<div class="card card-outline-secondary">
 					<div class="card-body">

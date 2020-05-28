@@ -54,7 +54,7 @@
 			<p>
 				<strong>Beer Description</strong>
 			</p>
-			<p class="text-lowercase">${beer.description}</p>
+			<p class="altfont text-lowercase">${beer.description}</p>
 
 			<div class="changetext mb-5">
 				<a href="index.do" class="changetext">HOME</a> <a
@@ -71,8 +71,8 @@
 				<textarea rows="8" cols="50" name="content" placeholder="Comment"></textarea>
 				<div id="center">
 					<input type="hidden" name="beerId" value="${beer.id}"></input> <input
-						type="submit" name="submit" value="submit"
-						class="text-center btn btn-danger btn-lg mt-3"></input>
+						type="submit" name="submit" value="Submit"
+						class="altfont text-center btn btn-danger btn-lg mt-3"></input>
 
 				</div>
 
@@ -88,7 +88,7 @@
 
 	<div class="container-fluid mt-5 mb-5 border border-danger mx-auto"
 		style="width: 50rem;">
-		<div class=" container list-unstyled ">
+		<div class="altfont container list-unstyled ">
 
 
 			<c:forEach var="comment" items="${beer.comments}">

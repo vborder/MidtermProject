@@ -12,14 +12,6 @@
 	crossorigin="anonymous">
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
 	crossorigin="anonymous"></script>
-<link
-	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap"
-	rel="stylesheet">
-<style>
-@import
-	url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap')
-	;
-</style>
 <link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 </head>
 <body>
@@ -36,13 +28,13 @@
 						method="POST">
 						<fieldset>
 							<div>
-								<h5 class="card-title text-center">Update Profile</h5>
-									<p>Welcome, ${user.loginName}!</p>
+								<h5 class="altfont card-title text-center">Update Profile</h5>
+									<p class="altfont">Welcome, ${user.loginName}!</p>
 									
 									
 							</div>
 							<!-- loginName -->
-							<div class="form-group">
+							<div class="altfont form-group">
 								<label class="control-label" for="loginName">User Name:
 								</label> 
 								
@@ -51,7 +43,7 @@
 							</div>
 
 							<!-- firstName -->
-							<div class="form-group">
+							<div class="altfont form-group">
 								<label class="control-label" for="firstName">First Name:
 								</label>
 								
@@ -61,7 +53,7 @@
 							</div>
 
 							<!-- lastName -->
-							<div class="form-group">
+							<div class="altfont form-group">
 								<label class="control-label" for="email">Last Name: </label>
 								
 									<input class="form-control" type="text" name="lastName"
@@ -78,7 +70,7 @@
 							</div> --%>
 
 							<!-- password -->
-							<div class="form-group">
+							<div class="altfont form-group">
 								<label class="control-label" for="password">Password: </label>
 								
 									<input class="form-control" type="password" name="password" placeholder="Enter Password"
@@ -87,10 +79,10 @@
 							
 							</div>
 							<!-- update.do -->
-							<div class="form-group">
+							<div class="altfont form-group">
 								<div class="controls"></div>
 							</div>
-							<input class="btn btn-success btn-block" type="submit" value="Submit" />
+							<input class="altfont btn btn-success btn-block" type="submit" value="Submit" />
 						</fieldset>
 					</form>
 					</div>
