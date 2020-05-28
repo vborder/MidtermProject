@@ -2,6 +2,7 @@ package com.skilldistillery.brushr.entities;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -215,6 +216,7 @@ public class BeerRecipe {
 	}
 
 	public List<Comment> getComments() {
+		Collections.reverse(comments);
 		return comments;
 	}
 
