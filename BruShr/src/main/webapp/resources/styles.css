@@ -82,4 +82,7 @@ box-shadow: 5px 10px #9f9f9f;
 visibility: hidden; 
 }
 
+.btn {
+	font-family: Open Sans, sans-serif;
+}
 
