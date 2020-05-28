@@ -53,6 +53,15 @@
 				<div style="clear: both;"></div>
 			</div>
 
+			<div class="mt-5">
+				<h2>My Beers:</h2>
+				<c:forEach var="beer" items="${user.beers}">
+					<h4>
+						<a href="getBeerById.do?id=${beer.id}">${beer.beerName}</a> - <span>${beer.beerType}</span>
+					</h4>
+					<hr>
+				</c:forEach>
+			</div>
 		</div>
 	</div>
 
@@ -64,7 +73,7 @@
 		class="text-center btn btn-primary btn-lg btn-block mb-5 mt-5"
 		role="button">Go To See All The Beer Recipes</a>
 
-<%@ include file="footer.jsp"%> 
+	<%@ include file="footer.jsp"%>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
 		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>
