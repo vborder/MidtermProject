@@ -14,6 +14,11 @@ body {
 	
 }
 
+
+.altfont{
+	font-family: 'Open Sans', serif !important;
+}
+
 .alignleft {
 	float: left;
 }

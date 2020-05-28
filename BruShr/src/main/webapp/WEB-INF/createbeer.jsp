@@ -13,6 +13,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap"
 	rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="resources/styles.css" />
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"
 	crossorigin="anonymous"></script>
 </head>

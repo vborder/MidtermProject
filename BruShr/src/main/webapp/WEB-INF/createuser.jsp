@@ -12,7 +12,7 @@
 	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
 	crossorigin="anonymous">
 <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" type="text/css" href="resources/styles.css"></link>
 
 <style>
@@ -23,9 +23,9 @@
 <body>
 
   <%@ include file="navbar.jsp"%> 
-	<h1 class="text-center bg-danger p-3 mb-5">This is where you create an User Account</h1>
+	
 
-	<div class="container-fluid text-center col-lg-8 align-self-baseline pb-5 pt-3 bg-info">
+	<div class="container-fluid text-center col-lg-8 align-self-baseline pb-5 pt-3 bg-info altfont">
 		<div class="contain">
 			<form action="createAccount.do" method="POST">
 						<div class="form-group">
@@ -59,7 +59,7 @@
 							<input class="form-control" id="exampleFormControlTextarea1"
 								placeholder="Password" type="password" name="password"></input>
 						</div>
-						<button class="btn btn-dark mt-3" type = "submit">Submit</button>
+						<button class="btn btn-danger mt-3" type = "submit">Submit</button>
 			</form>
 		</div>
 	</div>
