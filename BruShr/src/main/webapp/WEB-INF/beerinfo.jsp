@@ -22,13 +22,20 @@
 
 	<%@ include file="navbar.jsp"%>
 
-	<p>${beer.id}</p>
-	<p>${beer.user.id}</p>
-
 
 	<div class="card mt-5 ml-5 text-center bg-light mx-auto "
 		style="width: 50rem;">
-		<img class="card-img-top" src="${beer.imgUrl}" alt="Card image cap">
+
+		<c:choose>
+			<c:when test="${beer.imgUrl == null }">
+				<img src="resources/media/beer1.jpg" class="card-img-top"
+					alt="beer glass in hand">
+			</c:when>
+			<c:otherwise>
+				<img src="${beer.imgUrl }" class="card-img-top"
+					alt="beer glass in hand">
+			</c:otherwise>
+		</c:choose>
 		<div class="card-body">
 
 			<hr>
@@ -58,15 +65,15 @@
 
 	</div>
 
-	<div class= "container-fluid mt-5" >
-		<div class= "container">
-			<form action="addComment.do" method="POST" >
+	<div class="container-fluid mt-5">
+		<div class="container">
+			<form action="addComment.do" method="POST">
 				<textarea rows="8" cols="50" name="content" placeholder="Comment"></textarea>
 				<div id="center">
-				<input type="hidden" name="beerId" value="${beer.id}"></input>
-				<input type="submit" name="submit" value="submit"
-					class="text-center btn btn-danger btn-lg mt-3"></input>
-				
+					<input type="hidden" name="beerId" value="${beer.id}"></input> <input
+						type="submit" name="submit" value="submit"
+						class="text-center btn btn-danger btn-lg mt-3"></input>
+
 				</div>
 
 			</form>
