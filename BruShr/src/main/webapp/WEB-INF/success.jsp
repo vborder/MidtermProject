@@ -29,8 +29,8 @@
 	<h1 class="masthead-heading text-uppercase mb-0 text-center">Successful Request</h1>
 		<div class="container d-flex align-items-center flex-column">
 			<!-- Masthead Avatar Image-->
-			<img class="masthead-avatar mb-5" src="https://images.unsplash.com/photo-1571613316887-6f8d5cbf7ef7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
-				alt="zoomed in image of beer glass" style="height: 300px; width: 300px;"/>
+			<img class="masthead-avatar mb-5 img-fluid" src="https://images.unsplash.com/photo-1579009120005-df2fd9baf7e5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=399&q=80"
+				alt="zoomed in image of beer glass"/>
 			
 			<!-- Icon Divider-->
 			<div class="divider-custom divider-light">
@@ -39,29 +39,27 @@
 				<div class="divider-custom-line"></div>
 			</div>
 			<!-- Masthead Subheading-->
-		<h2><a class="text-dark" href="index.do">Home Page</a></h2>
-		<br>
-		<h2><a class="text-dark" href="about.do">Software Developers</a></h2>
+		
+		<div class="col-lg-4 mt-3">	
+		<a class="text-uppercase h2 ml-4 p-3 mb2 beerme text-dark" href="about.do">ABOUT</a>
+		</div>
+	<br>
 		</div>
 	</header>
 	<!-- Portfolio Section-->
 	<section class="page-section portfolio" id="portfolio">
 		<div class="container">
 			<!-- Portfolio Section Heading-->
-			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><a href="index.do">BrüShr</a></h2>
+			<h2 class="page-section-heading text-center text-uppercase text-secondary mb-0"><a class="text-uppercase h2 ml-4 p-3 mb2 beerme text-dark" href="index.do">BrüShr</a></h2>
 			<!-- Icon Divider-->
-			<div class="divider-custom">
-				<div class="divider-custom-line"></div>
-				
-				<div class="divider-custom-line"></div>
-			</div>
+			
 			<!-- Portfolio Grid Items-->
                 <div class="row">
                     <!-- Portfolio Item 1-->
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white"></div>
                             </div>
                             <img class="img-fluid" src="https://images.unsplash.com/photo-1571947221289-ed32f8faad61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="glass of beer with beer bottles behind" />
                         </div>
@@ -70,16 +68,17 @@
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal2">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white"></div>
                             </div>
                             <img class="img-fluid" src="https://images.unsplash.com/photo-1455641064490-74f5f8dbf598?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" alt="open beer bottles brown" />
                         </div>
                     </div>
+                    <br>
                     <!-- Portfolio Item 3-->
                     <div class="col-md-6 col-lg-4 mb-5">
                         <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal3">
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                                <div class="portfolio-item-caption-content text-center text-white"></div>
                             </div>
                             <img class="img-fluid" src="https://images.unsplash.com/photo-1527169402691-feff5539e52c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60" alt="enjoy a beer with friends and snacks" />
                         </div>
