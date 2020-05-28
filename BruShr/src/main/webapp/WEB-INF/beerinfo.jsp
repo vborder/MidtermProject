@@ -25,7 +25,17 @@
 
 	<div class="card mt-5 ml-5 text-center bg-light mx-auto "
 		style="width: 50rem;">
-		<img class="card-img-top" src="${beer.imgUrl}" alt="Card image cap">
+
+		<c:choose>
+			<c:when test="${beer.imgUrl == null }">
+				<img src="resources/media/beer1.jpg" class="card-img-top"
+					alt="beer glass in hand">
+			</c:when>
+			<c:otherwise>
+				<img src="${beer.imgUrl }" class="card-img-top"
+					alt="beer glass in hand">
+			</c:otherwise>
+		</c:choose>
 		<div class="card-body">
 
 			<hr>
