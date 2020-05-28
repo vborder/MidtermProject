@@ -27,9 +27,13 @@ public class HomeController {
 //	}
 
 	@RequestMapping(path = { "/", "home.do" })
-	public String goHome() {
+	public String goHome(Model model, HttpSession session) {
+		List<BeerRecipe> beer = beerDAO.getAllBeers();
+		model.addAttribute("beers", beer);
+		session.getAttribute("user");
+		
+		return "index";
 
-		return "home";
 	}
 
 //////INDEX Page/////////

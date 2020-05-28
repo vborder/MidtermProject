@@ -216,7 +216,11 @@ public class BeerRecipe {
 	}
 
 	public List<Comment> getComments() {
-		Collections.reverse(comments);
+		if (comments != null) {
+			Collections.reverse(comments);
+			
+		}
+		
 		return comments;
 	}
 
