@@ -52,7 +52,7 @@
 								<br>
 								<!-- Beer Type -->
 								<div class="form group">
-									<label for="beer type">Beer type:</label>
+									<label for="beer type">Beer type: (Previously selected: ${beer.beerType})</label>
 									<select multiple class="form-control" id="beer type" value="${beer.beerType}" name="beerType">
 										<option selected>Brown Ale</option>
 										<option>Belgian-Style Ale</option>
@@ -70,7 +70,7 @@
 									<br>
 								<!-- Beer Yeast -->
 								<div class="form-group">
-									<label for="yeast">Yeast:</label>
+									<label for="yeast">Yeast: (Previously selected: ${beer.yeast})</label>
 									<select class="form-control" id="yeast" value="${beer.yeast}" name="yeast">
 										<!-- 	<option selected>Choose one of the following types</option> -->
 										<option selected>Ale</option>
@@ -80,11 +80,12 @@
 								<!-- Beer Description -->
 								<div class="form-group">
 									<label for="description">Description:</label>
-									<textarea class="form-control" type="text" value="${beer.description}" id="description"
-									name="description" rows="6" columns="140" autocomplete="off"></textarea>
+									<textarea class="form-control" type="text" id="description" value="${beer.description}"
+									name="description" rows="6" columns="140" autocomplete="off">${beer.description}</textarea>
 								</div>
 									<br> <input type="hidden" name="user_id" value="${sessionScope.user.id}">
 									<button type="submit" class="btn btn-success text-center">Update</button>
+									<a button type="button" class="btn btn-secondary" href="index.do">Discard changes</a>
 							</fieldset>
 					</form>
 				</div>

@@ -86,6 +86,7 @@
 									<br> <input type="hidden" name="user_id" value="${sessionScope.user.id}">
 										<input type="hidden" name="beerId" value="${beer.id}"></input>
 									<button type="submit" class="btn btn-success text-center">Create</button>
+									<a button type="button" class="btn btn-secondary" href="index.do">Discard</a>
 							</fieldset>
 					</div>
 				</div>
