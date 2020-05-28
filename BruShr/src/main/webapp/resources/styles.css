@@ -72,4 +72,9 @@ box-shadow: 5px 10px #9f9f9f;
 	color: black;
 }
 
+.carousel-indicators li 
+{ 
+visibility: hidden; 
+}
+
 
