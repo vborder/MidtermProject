@@ -57,7 +57,7 @@
 							<label class="text-white-75 font-weight-light"
 								for="exampleFormControlTextarea1">Password</label>
 							<input class="form-control" id="exampleFormControlTextarea1"
-								placeholder="Password"  name="password"></input>
+								placeholder="Password" type="password" name="password"></input>
 						</div>
 						<button class="btn btn-dark mt-3" type = "submit">Submit</button>
 			</form>
