@@ -102,10 +102,12 @@ public class HomeController {
 
 	//////// Search beerById////////////
 	@RequestMapping(path = "getBeerById.do", method = RequestMethod.GET)
-	public String getBeerById(@RequestParam(name = "id") int id, Model model) {
+	public String getBeerById(@RequestParam(name = "id") int id, Model model, HttpSession session) {
 		System.out.println("**********************" + id);
 		BeerRecipe beer = beerDAO.getBeerById(id);
+		User user = (User) session.getAttribute("user");
 		model.addAttribute("beer", beer);
+		model.addAttribute("user", user);
 		return "beerinfo";//
 	}
 
@@ -156,7 +158,7 @@ public class HomeController {
 		BeerRecipe b = beerDAO.getBeerById(id);
 		model.addAttribute(b);
 		beerDAO.createComment(id, comment, user);
-		return getBeerById(id, model);
+		return getBeerById(id, model, session);
 	}
 	
 	@RequestMapping(path="about.do")
