@@ -58,35 +58,38 @@
 
 			<div class="changetext mb-5">
 				<c:if test="${beer.id != null and user.id == beer.user.id}">
-				<a href="index.do" class="changetext">HOME</a> <a
-					href="updateBeer.do?id=${beer.id}" class="changetext">EDIT</a> <a
-					href="deleteBeer.do?id=${beer.id}" class="changetext">DELETE</a>
+					<a href="index.do" class="changetext">HOME</a>
+					<a href="updateBeer.do?id=${beer.id}" class="changetext">EDIT</a>
+					<a href="deleteBeer.do?id=${beer.id}" class="changetext">DELETE</a>
 				</c:if>
 			</div>
 		</div>
 
 	</div>
 
-	<div class="container-fluid mt-5">
-		<div class="container altfont">
-			<form action="addComment.do" method="POST">
-				<textarea rows="8" cols="50" name="content" placeholder="Comment"></textarea>
-				<div id="center">
-					<input type="hidden" name="beerId" value="${beer.id}"></input> <input
-						type="submit" name="submit" value="Submit"
-						class="altfont text-center btn btn-danger btn-lg mt-3"></input>
+	<c:if test="${user.id != null}">
+		<div class="container-fluid mt-5">
+			<div class="container">
+				<form action="addComment.do" method="POST">
+					<textarea rows="8" cols="50" name="content" placeholder="Comment"></textarea>
+					<div id="center">
+						<input type="hidden" name="beerId" value="${beer.id}"></input> <input
+							type="submit" name="submit" value="Submit"
+							class="altfont text-center btn btn-danger btn-lg mt-3"></input>
 
-				</div>
+					</div>
 
-			</form>
+				</form>
+			</div>
 		</div>
-	</div>
+	</c:if>
 
 
 
 
 
 	<!-- user comments  -->
+
 
 	<div class="container-fluid mt-5 mb-5 border border-danger mx-auto"
 		style="width: 50rem;">
