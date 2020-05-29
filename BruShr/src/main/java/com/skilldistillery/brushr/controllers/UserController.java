@@ -81,6 +81,7 @@ public class UserController {
 		System.out.println(user);
 		System.out.println(user.getId());
 		User updateUser = userDAO.updateUser(user.getId(), user);
+		session.setAttribute("user", updateUser);
 		System.out.println(updateUser);
 		model.addAttribute(updateUser);
 		return "success";
