@@ -69,7 +69,7 @@
 
 	<c:if test="${user.id != null}">
 		<div class="container-fluid mt-5">
-			<div class="container">
+			<div class="container altfont">
 				<form action="addComment.do" method="POST">
 					<textarea rows="8" cols="50" name="content" placeholder="Comment"></textarea>
 					<div id="center">
@@ -93,14 +93,14 @@
 
 	<div class="container-fluid mt-5 mb-5 border border-danger mx-auto"
 		style="width: 50rem;">
-		<div class="altfont container list-unstyled ">
+		<div class="container list-unstyled altfont">
 
 
 			<c:forEach var="comment" items="${beer.comments}">
 
 
 
-				<div class="media-body">
+				<div class="altfont media-body">
 					<h3 class="mt-0 mb-1">${comment.user.firstName}
 						${comment.user.lastName}</h3>
 					<p>${comment.content}</p>
