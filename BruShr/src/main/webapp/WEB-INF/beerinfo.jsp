@@ -68,7 +68,7 @@
 	</div>
 
 	<div class="container-fluid mt-5">
-		<div class="container">
+		<div class="container altfont">
 			<form action="addComment.do" method="POST">
 				<textarea rows="8" cols="50" name="content" placeholder="Comment"></textarea>
 				<div id="center">
